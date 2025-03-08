@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동영상 컨트롤 기능</title>
+    <link rel="stylesheet" href="video.css">
+</head>
+<body>
+    <div id="wrap">
+        <video id="myVideo">
+            <source src="image/AD.mp4" type="video/mp4">
+            브라우저가 video 태그를 지원하지 않습니다.
+        </video>
+        <div class="bbox">
+            <div class="brealbox">
+                <button id="go" onclick="playVideo()">▶</button>
+                <button id="stop" onclick="pauseVideo()">⏸</button>
+                <button id="left" onclick="skipTime(-10)" title="10초 되감기"></button>
+                <button id="right" onclick="skipTime(10)" title="10초 빨리감기"></button>
+    
+                <button onclick="stopVideo()">⏹</button>
+                
+                <!-- <button onclick="changeSpeed(-0.1)">-0.1</button>
+                <button onclick="resetSpeed()">🔄</button>
+                <button onclick="changeSpeed(0.1)">+1.0</button>
+                
+                <button onclick="toggleControls()">🎛</button>
+                <button onclick="toggleLoop()">🔁</button>
+                <button onclick="toggleAutoplay()">▶</button> -->
+            </div>
+        </div>
+        <div class="timebox">
+            <div id="leftbox" class="left">
+                <p>◀ 10초</p>
+            </div>
+            <div id="rightbox" class="right">
+                <p>10초 ▶</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="video.js"></script>
+</body>
+</html>
