@@ -3,14 +3,21 @@ const stopp = document.getElementById('stop');
 const goo = document.getElementById('go');
 
 function btnupdate() {
-    if(video.pause) {
-        stopp.style.display = 'block';
-        goo.style.display = 'none';
-    } else {
+    if(video.paused || video.ended) {
         stopp.style.display = 'none';
         goo.style.display = 'block';
+    } else {
+        stopp.style.display = 'block';
+        goo.style.display = 'none';
     }
 }
+video.addEventListener('ended', btnupdate)
+
+function autostart() {
+    stopp.style.display = 'block';
+    goo.style.display = 'none';
+}
+video.addEventListener('play', autostart)
 
 function playVideo() {
     video.play();
@@ -24,7 +31,9 @@ function pauseVideo() {
 
 function stopVideo() {
     video.pause();
-    video.currentTime = 0; // 영상 처음으로 이동
+    video.currentTime = 0;
+    stopp.style.display = 'none';
+    goo.style.display = 'block';
 }
 
 function skipTime(seconds) {
@@ -33,11 +42,17 @@ function skipTime(seconds) {
 
 function changeSpeed(amount) {
     video.playbackRate = Math.max(0.1, video.playbackRate + amount);
-    alert(video.playbackRate)
+    document.getElementById('lookbox').textContent = parseFloat(video.playbackRate.toFixed(2));
+    if(video.playbackRate === 0.1) {
+        video.playbackRate = 0.1;
+    } else {
+        document.getElementById('lookbox').textContent = parseFloat(video.playbackRate.toFixed(2));
+    }
 }
 
 function resetSpeed() {
     video.playbackRate = 1;
+    document.getElementById('lookbox').textContent = "1";
 }
 
 function toggleControls() {
@@ -51,8 +66,9 @@ function toggleLoop() {
 
 function toggleAutoplay() {
     video.autoplay = !video.autoplay;
-    alert("자동 재생: " + (video.autoplay ? "켜짐 (새로고침 필요)" : "꺼짐"));
-}
+    alert("자동 재생: " + (video.autoplay ? "켜짐" : "꺼짐"));
+  }
+
 
 document.getElementById('left').addEventListener('click', function(){
     document.getElementById('leftbox').style.opacity = '1';
