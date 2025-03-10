@@ -1,0 +1,124 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+input[type="radio"] {
+    display: none;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.notbox {
+    width: 600px;
+    height: 500px;
+}
+.notbox > header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.notbox > header::after {
+    width: 90%;
+    height: 5px;
+    background-color: black;
+    content: '';
+    position: absolute;
+    bottom: 0;
+}
+.notbox > header h1 {
+    position: absolute;
+    left: 5%;
+    transform: skew(-10deg);
+}
+.notibody{
+    width: 100%;
+    height: calc(100% - 100px);
+}
+.notibody > section{
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+.desc {
+    cursor: pointer;
+    width: 100%;
+    height: calc(100% / 6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.desc::before {
+    width: 90%;
+    height: 2px;
+    background-color: rgb(172, 172, 172);
+    content: '';
+    position: absolute;
+    bottom: 0;
+}
+.desc > p {
+    top: 20%;
+    position: absolute;
+    left: 5%;
+    font-weight: 900;
+}
+.desc > span {
+    font-weight: 100;
+    color: gray;
+    bottom: 20%;
+    position: absolute;
+    left: 5%;
+}
+.desc > button {
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    right: 5%;
+}
+.desc:hover p{
+    text-decoration: underline;
+}
+.notice_menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 5%;
+    width: 150px;
+    height: 30px;
+}
+.notice_menu li {
+    margin: 0 10px 0 10px;
+    text-align: center;
+    float: left;
+    list-style: none;
+}
+.notice_menu label {
+    line-height: 30px;
+    display: block;
+    color: black;
+}
+.notice_menu p {
+    font-size: 20px;
+    transform: skew(-10deg);
+}
+#tab1:checked ~ .box1,
+#tab2:checked ~ .box2,
+#tab3:checked ~ .box3,
+#tab4:checked ~ .box4,
+#tab5:checked ~ .box5, 
+#tab6:checked ~ .box6{
+    display: block;
+}

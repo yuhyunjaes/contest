@@ -1,0 +1,183 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.btnbox {
+    width: 100vw;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 10%;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.352);
+}
+#slide1:checked ~ .btnbox .bt1,
+#slide2:checked ~ .btnbox .bt2,
+#slide3:checked ~ .btnbox .bt3{
+    background-color: white;
+    color: black;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+}
+.btnbox label {
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin: 0 20px 0 20px;
+    transition: 0.5s;
+}
+.slider {
+    transition: 0.5s;
+    width: 300%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+@keyframes slide1 {
+    0% {
+        transform: translateX(0);
+    }
+    16% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100vw);
+    }
+    49% {
+        transform: translateX(-100vw);
+    }
+    66% {
+        transform: translateX(-200vw);
+    }
+    82% {
+        transform: translateX(-200vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slide2 {
+    0% {
+        transform: translateX(-100vw);
+    }
+    16% {
+        transform: translateX(-100vw);
+    }
+    33% {
+        transform: translateX(-200vw);
+    }
+    49% {
+        transform: translateX(-200vw);
+    }
+    66% {
+        transform: translateX(0vw);
+    }
+    82% {
+        transform: translateX(0vw);
+    }
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+@keyframes slide3 {
+    0% {
+        transform: translateX(-200vw);
+    }
+    16% {
+        transform: translateX(-200vw);
+    }
+    33% {
+        transform: translateX(0vw);
+    }
+    49% {
+        transform: translateX(0vw);
+    }
+    66% {
+        transform: translateX(-100vw);
+    }
+    82% {
+        transform: translateX(-100vw);
+    }
+    100% {
+        transform: translateX(-200vw);
+    }
+}
+.slide {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 5%;
+    font-size: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+}
+
+
+.left::before {
+    content: 'LEFT';
+}
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 5%;
+    font-size: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+    color: white;
+}
+.right::before {
+    content: 'RIGHT';
+}
+input[type="radio"] {
+    display: none;
+}
+#slide1:checked ~ .slider {
+    animation: 16s infinite linear slide1;
+    animation-play-state: running;
+}
+#slide2:checked ~ .slider {
+    animation: 16s infinite linear slide2;
+    animation-play-state: running;
+}
+#slide3:checked ~ .slider {
+    animation: 16s infinite linear slide3;
+    animation-play-state: running;
+}
+#slide1:checked ~ .slider:hover,
+#slide2:checked ~ .slider:hover,
+#slide3:checked ~ .slider:hover {
+    animation-play-state: paused;
+}
