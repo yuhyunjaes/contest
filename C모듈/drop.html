@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }   
+        #wrap {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+        #wrap > article {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        #wrap > article::after {
+            width: 1px;
+            height: 100%;
+            background-color: black;
+            position: absolute;
+            right: 0;
+            content: '';
+        }
+        #wrap > article > section {
+            width: 200px;
+            height: 300px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .container {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container > article {
+            width: 600px;
+            height: 500px;
+            border: 1px solid black;
+        }
+        .cartlist {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+        }
+        .pp {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <article>
+            <section class="obj" draggable="true">PANTONE PD충전 보조배터리</section>
+            <section class="obj" draggable="true">Bowie D05 무선 블루투스 5.3 헤드셋</section>
+            <section class="obj" draggable="true">독거미 F99 기계식 키보드</section>
+            <section class="obj" draggable="true">파이널마우스 스타라이트12 페가수스 미디엄</section>
+            <section class="obj" draggable="true">보이저5200 블루투스 이어폰</section>
+        </article>
+        <div class="container">
+            <article id="cart" ondrag="bdrop(event)" ondragover="up(event)"></article>
+        </div>
+    </div>
+    <script src="drop.js"></script>
+</body>
+</html>

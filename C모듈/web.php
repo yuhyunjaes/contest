@@ -7,6 +7,18 @@
     <link rel="stylesheet" href="web.css">
 </head>
 <body>
+    <?php 
+        $conn = mysqli_connect("localhost", "root", "", "web");
+
+        $id = $_GET['id'];
+
+        $sql = "SELECT username FROM users WHERE username = '$id'";
+
+        $result = mysqli_query($conn, $sql);
+
+        $user = mysqli_fetch_assoc($result);
+    
+    ?>
     <div id="wrap">
         <form action="action.php" method="POST" id="forr">
             <div>
@@ -14,9 +26,10 @@
             </div>
             <div>
                 <p>아이디
-                    <span></span>
+                    <?php if(!empty($id)){ if(mysqli_num_rows($result) > 0){echo'<span id="sp">이미 존재하는 아이디입니다.</span>';}else{echo'<span id="sp" style="color: blue;">사용 가능한 아이디입니다.</span>';}} else {echo'<span id="sp" style="opacity: 0;">값 없음</span>';}?>
                 </p>
-                <input type="text" name="id" id="id" placeholder=" 아이디 입력">
+                <input type="text" name="id" id="id" placeholder=" 아이디 입력" value="<?php if(mysqli_num_rows($result) > 0){echo'';} else {echo$id;}?>" <?php if(!empty($id)){ if(mysqli_num_rows($result) > 0){echo'';}else{echo'readonly';}}?>>
+                <a href="" id="aa" onclick="sele()">ID 중복확인</a>
             </div>
             <div>
             <p>비밀번호
@@ -38,6 +51,7 @@
             </div>
             <div>
                 <input type="submit" value="가입하기">
+                <input onclick="home()" type="button" value="다시쓰기">
             </div>
         </form>
     </div>

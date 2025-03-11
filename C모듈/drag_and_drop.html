@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>드래그 앤 드롭 예제</title>
+  <style>
+    .box, .cart {
+      margin: 10px;
+      padding: 10px;
+      text-align: center;
+    }
+    .product, .product-in-cart {
+      margin: 5px;
+      padding: 5px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .cart {
+      width: 300px;
+      height: 200px;
+      border: 2px dashed #00f;
+    }
+    .pricebox {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="productBox">
+    <div class="product" id="product1" draggable="true" data-price="10000">10000</div>
+    <div class="product" id="product2" draggable="true" data-price="25000">25000</div>
+    <div class="product" id="product3" draggable="true" data-price="40000">40000</div>
+  </div>
+
+  <div class="cart" id="cart" ondrop="drop(event)" ondragover="allowDrop(event)">
+    장바구니
+  </div>
+
+  <div class="pricebox" id="pricebox">총액: 0</div>
+
+  <script>
+    let totalPrice = 0;
+
+    // 드래그 시작 시 상품의 가격을 저장
+    document.querySelectorAll('.product').forEach(item => {
+      item.addEventListener('dragstart', (event) => {
+        // 상품의 가격을 innerText로 가져옴
+        event.dataTransfer.setData('price', event.target.innerText); 
+      });
+    });
+
+    // 드래그한 항목을 장바구니에 넣을 수 있게 설정
+    function allowDrop(event) {
+      event.preventDefault(); // 드롭 허용
+    }
+
+    // 장바구니에 드래그한 상품을 추가
+    function drop(event) {
+      event.preventDefault();
+
+      const draggedPrice = parseInt(event.dataTransfer.getData('price')); // 드래그한 상품의 가격
+      const cart = document.getElementById('cart');
+
+      // 이미 장바구니에 같은 가격의 상품이 있는지 확인
+      const cartItems = cart.querySelectorAll('.cart_box'); // 클래스 선택자 수정
+      for (let item of cartItems) {
+        if (parseInt(item.textContent) === draggedPrice) { // 숫자 비교로 수정
+          alert("이미 등록이 되어있습니다");
+          return;
+        }
+      }
+
+      // 상품 추가
+      const newItem = document.createElement('div');
+      newItem.textContent = draggedPrice;
+      newItem.classList.add('cart_box'); // 장바구니 아이템 스타일 추가
+      cart.appendChild(newItem);
+
+      // 가격 합산
+      totalPrice += draggedPrice;
+      document.getElementById('pricebox').textContent = '총액: ' + totalPrice;
+    }
+  </script>
+</body>
+</html>

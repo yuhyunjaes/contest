@@ -35,8 +35,26 @@ form > div:nth-child(5) {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
-form > div > input[type="text"],
+form > div:nth-child(2) input {
+    width: 50%;
+    height:45px;
+    position: absolute;
+    left: 15%;
+}
+form > div:nth-child(2) a {
+    font-size: 12px;
+    text-decoration: none;
+    color: white;
+    line-height: 45px;
+    text-align: center;
+    position: absolute;
+    right: 15%;
+    width: 15%;
+    height: 45px;
+    background-color: gray;
+}
 form > div > input[type="password"],
 form > div > input[type="email"] {
     width: 70%;
@@ -59,7 +77,18 @@ input[type="submit"] {
     border: none;
     background-color: orangered;
     color: white;
+    position: absolute;
+    top: 20%;
+    cursor: pointer;
 }
+input[type="button"] {
+    position: absolute;
+    bottom: 15%;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+
 form > div p {
     top: 0;
     left: 15%;
