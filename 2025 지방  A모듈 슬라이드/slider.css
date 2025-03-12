@@ -126,26 +126,14 @@ input[type="radio"] {
 #slider3:checked ~ .slider3 .right1{
     display: block;
 }
-#slider1:checked ~ .slider1 {
-    height: 500px;
-    animation: infinite linear 12s slider;
-}
-#slider2:checked ~ .slider2 {
-    height: 500px;
-    animation: infinite linear 12s slider;
-}
+#slider1:checked ~ .slider1,
+#slider2:checked ~ .slider2,
 #slider3:checked ~ .slider3 {
     height: 500px;
     animation: infinite linear 12s slider;
 }
-#slider4:checked ~ .slider1 {
-    height: 500px;
-    animation: infinite linear 12s slider1;
-}
-#slider5:checked ~ .slider2 {
-    height: 500px;
-    animation: infinite linear 12s slider1;
-}
+#slider4:checked ~ .slider1,
+#slider5:checked ~ .slider2,
 #slider6:checked ~ .slider3 {
     height: 500px;
     animation: infinite linear 12s slider1;
