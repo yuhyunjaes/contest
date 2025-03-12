@@ -1,0 +1,152 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+}
+.container {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+.slider1,
+.slider2,
+.slider3 {
+    position: absolute;
+    width: 400%;
+    height: 0;
+    display: flex;
+    overflow: hidden;
+}
+
+.slide1,
+.slide2,
+.slide3 {
+    width: 100vw;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    position: relative;
+}
+@keyframes slider {
+    0% {
+        transform: translateX(0);
+    }
+    16% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100vw);
+    }
+    49% {
+        transform: translateX(-100vw);
+    }
+    66% {
+        transform: translateX(-200vw);
+    }
+    82% {
+        transform: translateX(-200vw);
+    }
+    100% {
+        transform: translateX(-300vw);
+    }
+
+}
+@keyframes slider1 {
+    0% {
+        transform: translateX(0);
+    }
+    16% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100vw);
+    }
+    49% {
+        transform: translateX(-100vw);
+    }
+    66% {
+        transform: translateX(-200vw);
+    }
+    82% {
+        transform: translateX(-200vw);
+    }
+    100% {
+        transform: translateX(-300vw);
+    }
+
+}
+.left,
+.right {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(153, 97, 97, 0.788);
+    border-radius: 50%;
+}
+
+.left1,
+.right1 {
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 255, 13, 0.788);
+    border-radius: 50%;
+}
+.left,
+.left1 {
+    left: 5%;
+}
+.right,
+.right1 {
+    right: 5%;
+}
+input[type="radio"] {
+    display: none;
+}
+#slider1:checked ~ .slider1 .left,
+#slider1:checked ~ .slider1 .right,
+#slider2:checked ~ .slider2 .left,
+#slider2:checked ~ .slider2 .right,
+#slider3:checked ~ .slider3 .left,
+#slider3:checked ~ .slider3 .right{
+    display: none;
+}
+#slider1:checked ~ .slider1 .left1,
+#slider1:checked ~ .slider1 .right1,
+#slider2:checked ~ .slider2 .left1,
+#slider2:checked ~ .slider2 .right1,
+#slider3:checked ~ .slider3 .left1,
+#slider3:checked ~ .slider3 .right1{
+    display: block;
+}
+#slider1:checked ~ .slider1 {
+    height: 500px;
+    animation: infinite linear 12s slider;
+}
+#slider2:checked ~ .slider2 {
+    height: 500px;
+    animation: infinite linear 12s slider;
+}
+#slider3:checked ~ .slider3 {
+    height: 500px;
+    animation: infinite linear 12s slider;
+}
+#slider4:checked ~ .slider1 {
+    height: 500px;
+    animation: infinite linear 12s slider1;
+}
+#slider5:checked ~ .slider2 {
+    height: 500px;
+    animation: infinite linear 12s slider1;
+}
+#slider6:checked ~ .slider3 {
+    height: 500px;
+    animation: infinite linear 12s slider1;
+}
