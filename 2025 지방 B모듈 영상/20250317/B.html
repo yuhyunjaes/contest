@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0 auto;
+            padding: 0;
+        }   
+        #wrap {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .modalbox {
+            width: 1000px;
+            height: 600px;
+            background-color: orangered;
+            border: rgb(0, 0, 0) 10px solid;
+            display: flex;
+        }
+        .modalbox > article {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            overflow-x: auto;
+        }
+        .modalbox > article section {
+            width: 200px;
+            height: 350px;
+            background-color: white;
+            margin: 10px;
+        }
+        .container {
+            width: 30%;
+            height: 100%;
+        }
+        #cart {
+            width: 100%;
+            height: 70%;
+        }
+        .by {
+            width: 100%;
+            height: 30%;
+            background-color: white;
+        }
+        .cartlist {
+            width: 90%;
+            height: 20px;
+            background-color: white;
+            position: relative;
+            font-size: 12px;
+        }
+        .cartlist::before {
+            width: 100%;
+            height: 1px;
+            background-color: black;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            line-height: 20px;
+            text-align: left;
+        }
+        .id {
+            width: 100%;
+            height: 30%;
+        }
+        .id input {
+            width: 80%;
+            height: 60%;
+        }
+        .price {
+            width: 100%;
+            height: 30%;
+            line-height: 54px;
+            color: rgb(199, 0, 0);
+        }
+        .button {
+            width: 100%;
+            height: 40%;
+        }
+        .by > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .button button {
+            width: 80%;
+            height: 60%;
+            background-color: rgb(199, 0, 0);
+            color: white;
+            font-weight: 900;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="modalbox">
+            <article>
+                <section class="obj" draggable="true">PANTONE PD충전 보조배터리</section>
+                <section class="obj" draggable="true">Bowie D05 무선 블루투스 5.3 헤드셋</section>
+                <section class="obj" draggable="true">독거미 F99 기계식 키보드</section>
+                <section class="obj" draggable="true">파이널마우스 스타라이트12 페가수스 미디엄</section>
+                <section class="obj" draggable="true">보이저5200 블루투스 이어폰</section>
+            </article>
+            <div class="container">
+                <article id="cart" ondrag="bdrop(event)" ondragover="up(event)"></article>
+                <div class="by">
+                    <div class="id">
+                        <input type="text" id="idd" name="namee" readonly>
+                    </div>
+                    <div class="price" id="price"></div>
+                    <div class="button">
+                        <button>구매하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/B.js"></script>
+</body>
+</html>
