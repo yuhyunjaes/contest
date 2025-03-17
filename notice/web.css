@@ -1,0 +1,882 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+    font-family: '휴먼모음T';
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    width: 100vw;
+    display: flex;
+    overflow-x: hidden;
+}
+#wrap {
+    width: 100vw;
+    background-color: #f0f0f0;
+    position: relative;
+}
+.logo label {
+    opacity: 0;
+    pointer-events: none;
+}
+.sidemenu {
+    transition: 0.5s;
+    overflow: hidden;
+    width: 0;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+}
+.sideheader {
+    width: 100%;
+    height: 20%;
+}
+.sidelogo {
+    width: 100vw;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: rgb(255, 255, 255);
+}
+.sidelogo img {
+    position: absolute;
+    left: 5%;
+    width: 200px;
+    height: 50px;
+}
+.sidenone_btn {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 55px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    right: 5%;
+}
+.sidelogin {
+    width: 100vw;
+    height: 40%;
+    background-color: orangered;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidelogin li {
+    margin: 0 30px 0 30px;
+    list-style: none;
+    float: left;
+}
+.sidelogin li:hover > a{
+    color: white;
+}
+.sidelogin a {
+    transition: 0.5s;
+    color: black;
+    text-decoration: none;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.sidemain {
+    width: 100%;
+    height: 80%;
+    background-color: white;
+}
+.sidemain label {
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.sidemain label::before {
+    width: 90%;
+    height: 3px;
+    background-color: gray;
+    content: '';
+    position: absolute;
+    bottom: 5%;
+}
+.sidemain label > p {
+    position: absolute;
+    left: 5%;
+    transition: 0.5s;
+}
+.sidemain label > p:hover,
+.sidemain label > p a:hover {
+    color: orangered;
+}
+.sidemain label > p > a {
+    transition: 0.5s;
+    text-decoration: none;
+    color: black;
+}
+.acoo {
+    overflow: hidden;
+    transition: 0.5s;
+    width: 100vw;
+    height: 0;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.acoo::before {
+    content: '';
+    width: 90%;
+    height: 3px;
+    background-color: gray;
+    position: absolute;
+    bottom: 0;
+}
+.acoo a {
+    text-decoration: none;
+    color: black;
+    transition: 0.5s;
+}
+.acoo a:hover {
+    color: orangered;
+}
+#aco2:checked ~ .acoo {
+    height: 50px;
+}
+#aco2:checked + label p {
+    color: orangered;
+}
+.aco_icon::after {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    content: '▼';
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+#aco2:checked + label::after {
+    content: '▲';
+}
+
+header {
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    position: sticky;
+    background-color: white;
+    z-index: 2;
+}
+.logo {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo label {
+    opacity: 0;
+    pointer-events: none;
+}
+.logo img {
+    width: 200px;
+    height: 50px;
+    object-fit: cover;
+    margin: 0 0 0 10px;
+}
+nav {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bu_menu {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu li {
+    float: left;
+    list-style: none;
+}
+.menu > li{
+    margin: 0 30px 0 30px;
+}
+.menu a {
+    line-height: 70px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+}
+.menu > li > a {
+    font-size: 18px;
+}
+.submenu {
+    transition: 0.5s;
+    overflow: hidden;
+    top: 70px;
+    width: 100vw;
+    height: 0;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.submenu a {
+    color: rgb(0, 0, 0);
+}
+.submenu > li > a:hover {
+    color: orangered;
+}
+.menu > li:nth-child(2):hover .submenu {
+    height: 200px;
+    border-top: 10px solid orangered;
+}
+.menu > li:hover > a {
+    color: #ff4500;
+}
+.buumenu > li{
+    list-style: none;
+    float: left;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px 0 10px;
+    color: white;
+}
+.buumenu > li:nth-child(3) a {
+    text-align: center;
+    line-height: 40px;
+    width: 120px;
+    height: 40px;
+    background-color: orangered;
+    color: white;
+    margin: 15px 0 15px 0;
+}
+.buumenu > li:nth-child(4) a {
+    text-align: center;
+    line-height: 40px;
+    width: 120px;
+    height: 40px;
+    background-color: orangered;
+    color: white;
+    margin: 15px 0 15px 0;
+}
+.buumenu a {
+    display: block;
+    line-height: 70px;
+    text-decoration: none;
+    color: #ffffff;
+    transition: 0.5s;
+}
+.buumenu a:hover {
+    color: #ff4500;
+}
+
+input[type="radio"] {
+    display: none;
+}
+.recon {
+    width: 100%;
+    height: calc(100vh - 70px);
+}
+.container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.slider1,
+.slider2,
+.slider3 {
+    position: absolute;
+    width: 400%;
+    height: 0;
+    display: flex;
+    overflow: hidden;
+}
+.slide1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url(image/vis/19.jpg);
+}
+.slide2 {
+    background-position: center;
+    background-size: cover;
+    background-image: url(image/vis/16.jpg);
+}
+.slide3 {
+    background-position: center;
+    background-size: cover;
+    background-image: url(image/vis/15.jpg);
+}
+
+.slider1 > div,
+.slider2 > div,
+.slider3 > div {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    position: relative;
+}
+@keyframes slider {
+    0% {
+        transform: translateX(0);
+    }
+    16% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100vw);
+    }
+    49% {
+        transform: translateX(-100vw);
+    }
+    66% {
+        transform: translateX(-200vw);
+    }
+    82% {
+        transform: translateX(-200vw);
+    }
+    100% {
+        transform: translateX(-300vw);
+    }
+
+}
+@keyframes slider1 {
+    0% {
+        transform: translateX(0);
+    }
+    16% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100vw);
+    }
+    49% {
+        transform: translateX(-100vw);
+    }
+    66% {
+        transform: translateX(-200vw);
+    }
+    82% {
+        transform: translateX(-200vw);
+    }
+    100% {
+        transform: translateX(-300vw);
+    }
+
+}
+.left,
+.right {
+    cursor: pointer;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: orangered;
+    border-radius: 50%;
+}
+.left::after,
+.left1::after {
+    content: '◀';
+    text-align: center;
+    line-height: 110px;
+    color: rgb(255, 255, 255);
+    display: block;
+}
+.left1,
+.right1 {
+    cursor: pointer;
+    display: none;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: orangered;
+    border-radius: 50%;
+}
+.right::after,
+.right1::after {
+    content: '▶';
+    text-align: center;
+    line-height: 110px;
+    color: rgb(255, 255, 255);
+    display: block;
+}
+.slidebox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.realbox1,
+.realbox2,
+.realbox3,
+.realbox4 {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.realbox1::after {
+    top: 20%;
+    font-size: 150px;
+    font-weight: 900;
+    color: black;
+    position: absolute;
+    content: 'Better Give & Take';
+    font-family:fantasy;
+    font-weight: 100;
+}
+.realbox1::before {
+    width: 500px;
+    position: absolute;
+    font-weight: 100;
+    bottom: 30%;
+    color: black;
+    font-size: 25px;
+    text-align: center;
+    content: '옴니채널 플랫폼 GIFTS로 전 세계 고객에게 선물의 가치를 높입니다.';
+}
+.realbox2::after {
+    top: 30%;
+    font-size: 100px;
+    font-weight: 100;
+    color: black;
+    position: absolute;
+    font-family:fantasy;
+    content: 'Life Style Platforms';
+}
+.realbox2::before {
+    width: 500px;
+    position: absolute;
+    bottom: 30%;
+    color: black;
+    font-size: 25px;
+    font-weight: 100;
+    text-align: center;
+    content: '고객과 가장 가까운 곳에서 고객에게 다양한 즐거움을 선물합니다.';
+}
+.realbox3::after {
+    top: 30%;
+    font-size: 100px;
+    font-weight: 100;
+    color: black;
+    font-family:fantasy;
+    position: absolute;
+    content: 'Online PLAYGROUND';
+}
+.realbox3::before {
+    width: 500px;
+    position: absolute;
+    bottom: 30%;
+    color: black;
+    font-size: 25px;
+    font-weight: 100;
+    text-align: center;
+    content: "업계 최초 당일 배송 서비스인 '오늘드림'으로고객 니즈 충족과 고객 경험을 혁신합니다.";
+}
+
+.left,
+.left1 {
+    left: 5%;
+}
+.right,
+.right1 {
+    right: 5%;
+}
+#slider1:checked ~ .slider1 .left,
+#slider1:checked ~ .slider1 .right,
+#slider2:checked ~ .slider2 .left,
+#slider2:checked ~ .slider2 .right,
+#slider3:checked ~ .slider3 .left,
+#slider3:checked ~ .slider3 .right{
+    display: none;
+}
+#slider1:checked ~ .slider1 .left1,
+#slider1:checked ~ .slider1 .right1,
+#slider2:checked ~ .slider2 .left1,
+#slider2:checked ~ .slider2 .right1,
+#slider3:checked ~ .slider3 .left1,
+#slider3:checked ~ .slider3 .right1{
+    display: block;
+}
+#slider1:checked ~ .slider1,
+#slider2:checked ~ .slider2,
+#slider3:checked ~ .slider3 {
+    height: 100%;
+    animation: infinite linear 16s slider;
+    animation-play-state: running;
+}
+
+
+
+#slider4:checked ~ .slider1,
+#slider5:checked ~ .slider2,
+#slider6:checked ~ .slider3 {
+    height: 100%;
+    animation: infinite linear 16s slider1;
+    animation-play-state: running;
+}
+#slider1:checked ~ .slider1:hover,
+#slider2:checked ~ .slider2:hover,
+#slider3:checked ~ .slider3:hover,
+#slider4:checked ~ .slider1:hover,
+#slider5:checked ~ .slider2:hover,
+#slider6:checked ~ .slider3:hover {
+    animation-play-state: paused;
+}
+
+
+.category_title {
+    width: 1220px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.category_title h1 {
+    font-size: 50px;
+    position: absolute;
+    left: 2%;
+    bottom: 20%;
+}
+.category_title h1 span {
+    color: orangered;
+}
+
+.contents {
+    width: 1220px;
+    height: 300vh; 
+}
+.contents > div {
+    width: 100%;
+    height: calc(100% / 5);
+}
+.cate_header {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.cate_header h1 {
+    position: absolute;
+    left: 2%;
+}
+.cate_header h1 span {
+    border-bottom: 5px solid orangered;
+}
+.cate_body {
+    width: 100%;
+    height: 80%;
+    display: flex;
+}
+.cate_body > div {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% / 3);
+    height: 100%;
+}
+.shopbox {
+    width: 95%;
+    height: 95%;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.shopbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.shopbox::after {
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 68, 0, 0.494);
+    position: absolute;
+    top: 0;
+    content: '바로가기';
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+.shopbox:hover::after {
+    opacity: 1;
+    pointer-events: all;
+}
+
+
+.gongji_title{
+    width: 1220px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.gongji_title h1 {
+    font-size: 50px;
+    position: absolute;
+    left: 2.5%;
+    bottom: 20%;
+}
+.gongji_title h1 span {
+    color: orangered;
+}
+.gongji {
+    width: 1220px;
+    height: calc(100vh - 300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.gongji > h1 {
+    position: absolute;
+    left: 2.5%;
+    top: 0;
+    height: 70px;
+
+    line-height: 70px;
+}
+.gongji > h1 span {
+    border-bottom: 5px solid #ff4500;
+}
+.gongjibox {
+    border-top: 5px solid orangered;
+    position: absolute;
+    bottom: 0;
+    width: 96%;
+    height: 80%;
+}
+.gongjibox article {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.gongjibox article p {
+    position: absolute;
+    left: 0;
+    font-weight: 900;
+}
+.noticebox {
+    width: 100%;
+    height: 90%;
+    position: relative;
+}
+.notice_controll {
+    width: 100%;
+    height: 10%;
+    display: flex;
+}
+.notice_controll div {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.notice_controll div a {
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0 10px 0 10px;
+    color: black;
+    font-weight: 900;
+}
+.notice_controll div b {
+    font-size: 20px;
+    margin: 0 10px 0 10px;
+}
+.notice_body {
+    width: 100%;
+    height: 80%;
+}
+.notice {
+    cursor: pointer;
+    width: 100%;
+    height: calc(100% / 6);
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.notice::before {
+    width: 100%;
+    height: 5px;
+    background-color: gray;
+    content: '';
+    position: absolute;
+    bottom: 5%;
+}
+.cate {
+    position: absolute;
+    left: 0;
+}
+.desc {
+    position: absolute;
+    left: 10%;
+}
+.notice span {
+    position: absolute;
+    right: 0;
+}
+.btnbox {
+    width: 100%;
+    height: 10%;
+    background-color: orangered;
+}
+.btbox div > a {
+    color: white;
+    margin: 0 20px 0 20px;
+    text-decoration: none;
+    font-weight: 900;
+}
+.btbox div span {
+    margin: 0 20px 0 20px;
+    font-weight: 900;
+}
+.btbox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.next {
+    position: absolute;
+    right: 5%;
+}
+.back {
+    position: absolute;
+    left: 5%;
+}
+.btbox div {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.back,
+.next {
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+}
+
+
+@media screen and (max-width:480px) {
+    .logo {
+        width: 100%;
+        position: relative;
+    }
+    .logo label {
+        opacity: 1;
+        pointer-events: all;
+        position: absolute;
+        left: 5%;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .logo > label div {
+        width: 100%;
+        height: 1px;
+        background-color: rgb(0, 0, 0);
+    }
+    #side1:checked ~ .sidemenu {
+        width: 100vw;
+    }
+    nav {
+        display: none;
+    }
+    .bu_menu {
+        display: none;
+    }
+    .contents {
+        width: 480px;
+        height: 200vh;
+    }
+    .category_title {
+        width: 480px;
+    }
+    .category_title h1,
+    .gongji_title h1 {
+        font-size: 30px;
+    }
+    .cate_header h1,
+    .gongji h1 {
+        font-size: 25px;
+    }
+    .gongji_title {
+        width: 480px;
+    }
+    .gongji {
+        width: 480px;
+    }
+    .left,
+    .left1,
+    .right,
+    .right1 {
+        scale: 0.7;
+    }
+    .left,
+    .left1 {
+        left: 0;
+    }
+    .right,
+    .right1 {
+        right: 0;
+    }
+    .realbox1::after,
+    .realbox2::after,
+    .realbox3::after {
+        font-size: 45px;
+    }
+    .realbox1::before,
+    .realbox2::before,
+    .realbox3::before {
+        width: 300px;
+        font-size: 15px;
+    }
+}
