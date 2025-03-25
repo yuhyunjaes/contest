@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "web");
+$conn = mysqli_connect("localhost", "root", "", "gifts");
 $sql = "
 INSERT INTO notices (category, descript, da) VALUES ('nomal', '파주가람점 리뉴얼로 인한 영업 중단 안내', '2024.07.22');
 INSERT INTO notices (category, descript, da) VALUES ('event', '<사적인TMI> EP.50 아비브 이벤트 당첨자 발표	', '2024.07.16');

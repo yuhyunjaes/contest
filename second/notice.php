@@ -1,6 +1,5 @@
-
 <?php
-$conn = mysqli_connect("localhost", "root", "", "web");
+$conn = mysqli_connect("localhost", "root", "", "gifts");
 if(!$conn) {
     echo'접속 오류';
 }

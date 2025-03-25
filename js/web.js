@@ -1,13 +1,13 @@
 function nonenext() { 
-    localStorage.setItem('key', 'nonee');
+    localStorage.setItem('key1', 'nonee');
 }
 
-let mess = localStorage.getItem('key'); 
+let mess = localStorage.getItem('key1'); 
 
 window.addEventListener('load', () => {
     if (mess == 'nonee') {
         document.getElementById('wrap').style.animation = 'popo';
         document.getElementById('loading').style.height = '0';
     }
-    localStorage.removeItem('key');
+    localStorage.removeItem('key1');
 })

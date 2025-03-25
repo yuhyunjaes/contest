@@ -9,54 +9,7 @@
 </head>
 <body>
     <div id="wrap">
-    <header>
-            <div class="real_header">
-                <div class="logo">
-                    <label for="side1">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </label>
-                    <a href="web.php"><img src="image/로고4.png" alt="로고고"></a>
-                </div>
-                <nav>
-                    <ul class="menu">
-                        <li>
-                            <a href="intro.php">소개</a>
-                        </li>
-                        <li>
-                            <a href="#">판매상품</a>
-                            <ul class="submenu">
-                                <li><a href="all.php">전체상품</a></li>
-                                <li><a href="hot.php">인기상품</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">가맹점</a>
-                        </li>
-                        <li>
-                            <a href="cart.php">장바구니</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="bu_menu">
-                    <ul class="buumenu">
-                        <li>
-                            <a href="#">관리자</a>
-                        </li>
-                        <li>
-                            <a href="cart.php">장바구니</a>
-                        </li>
-                        <li>
-                            <a href="#">로그인</a>
-                        </li>
-                        <li>
-                            <a href="#">회원가입</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
+    <?php include 'second/header.php';?>
         <div class="contents">
             <div class="contents_textbox">
                 <h1><span>GIFTS:Mall</span> 소개</h1>
@@ -115,7 +68,7 @@
         </div>
         <div class="motto_container">
             <div class="motto_box">
-                <div id="motto1" class="motto" style="--backposition: 0%;">    
+                <div id="motto1" class="motto" style="--backposition: 0;">    
                     <div class="motto_text">
                         <h1>행복신뢰</h1>
                     </div>
@@ -142,52 +95,7 @@
                 </div>
             </div>
         </div>
-        <footer>
-            <div class="real_footer">
-                <div class="sns">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="dae1">
-                주말 및 공휴일은 1:1문의하기를 이용해주세요. <br>
-                업무가 시작되면 바로 처리해드립니다. <br><br>
-                지방은행구매안전서비스<br>
-GIFTS:Mall은 현금 결제한 금액에 대해 지방은행과 채무지급보증 <br> 계약을체결하여 안전한 거래를 보장하고 있습니다.<br>
-<a href="#">서비스 가입사실 확인 ></a>
-                </div>
-                <ul class="footer_menu">
-                    <li><a href="#">개인정보처리방침</a></li>
-                    <li>|</li>
-                    <li><a href="#">이용약관.법적고지</a></li>
-                    <li>|</li>
-                    <li><a href="#">청소년보호방침</a></li>
-                    <li>|</li>
-                    <li><a href="#">이메일무단수집거부</a></li>
-                    <li>|</li>
-                    <li><a href="#">사이트맵</a></li>
-                    <li>|</li>
-                    <li><a href="#">채용</a></li>
-                </ul>
-                <div class="footer_logo">
-                    <a href="#"><img src="image/로고4.png" alt=""></a>
-                </div>
-                <div class="work_text">
-                    <p>(주)GIFTS:Mall | 사업자등록번호 : 809-81-01157 | 대표이사 황기영 <br>
-주소 : 서울특별시 용산구 한강대로 123, 40층 <br>
-본사 대표전화 : 02-123-4567 | GIFTS:Mall 가맹상담전화 : 02-123-4568<br> <br>
-고객센터 이용안내 <br>
-- 온라인몰 고객센터 1580-8282<br>
-- 매장고객센터 1577-8254 <br><br>고객센터 운영시간 [평일 09:00 - 18:00]
-</p>
-                </div>
-                <div class="copyright">
-                COPYRIGHTⓒ 2024 GIFTS:MALL KOREA INC. ALL RIGHTS RESERVED
-                </div>
-            </div>
-        </footer>
+        <?php include 'second/footer.php';?>
     </div>
 </body>
 </html>
