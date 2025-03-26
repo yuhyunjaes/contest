@@ -199,14 +199,15 @@ const vecon = document.getElementById('ve_con')
                 }
             })
             if(non === 0 && item.itname === name) {
+                item.ithap = 1;
                 const newitem = document.createElement('div')
                 newitem.innerHTML = `
                 <span class="naa">${item.itname}</span>
                 <img src="${item.itimg}"></img>
                 <span class="pri">${item.itprice}</span>
                 <span class="po">${item.itpost}</span>
-                <button class="up" onclick="up()">증가</button>
-                <button class="down" onclick="down()">증감</button>
+                <button class="up" onclick="up(event)">증가</button>
+                <button class="down" onclick="down(event)">증감</button>
                 <span class="hap">${item.ithap}</span>
                 `;
                 newitem.classList.add('cart-list');
@@ -216,7 +217,6 @@ const vecon = document.getElementById('ve_con')
                 alert('이미 추가된 상품입니다.')
             }
         })
-        total();
         noupdate();
         
     }
@@ -254,7 +254,6 @@ const vecon = document.getElementById('ve_con')
                 item.remove();
             }
         })
-        total();
         noupdate();
 
     }
@@ -273,34 +272,40 @@ const vecon = document.getElementById('ve_con')
     }
     
     document.getElementById('ran').value = ran();
-    
-    function total() {
-        let price = 0;
-        let post = 0;
-        document.querySelectorAll('.pri').forEach(item => {
-            price += Number(item.innerText);
-        });
-        document.querySelectorAll('.po').forEach(item=>{
-            post += Number(item.innerText)
-        })
-        if((price + post) >= 20000) {
-            post = 0;
-        }
-        document.getElementById('price_box').textContent = (post + price).toLocaleString()+'원';
-    }
-    
-    
-    
 });
-
 
 function skiptime(skip) {
     document.getElementById('vi').currentTime += skip;
 }
+let hap = 1;
+let price = 0;
+let totalprice = 0;
 
-function up() {
-    let hap = 1;
-    for(hap = 1;hap <= 10;hap++){
-        console.log(hap);
-    }
+function up(event) {
+    const partext = event.target.parentElement.querySelector('.naa').innerText;
+    lii.forEach(item=>{
+        if(item.itname === partext) {
+            hap = item.ithap += 1;
+            event.target.parentElement.querySelector('.hap').textContent = hap;
+        }
+    })
+}
+
+function down(event) {
+    const partext = event.target.parentElement.querySelector('.naa').innerText;
+    lii.forEach(item=>{
+        if(item.itname === partext && hap >= 1){
+            hap = item.ithap -= 1;
+            event.target.parentElement.querySelector('.hap').textContent = hap;
+        }
+        if(hap === 0) {
+            event.target.parentElement.remove();
+        }
+    })
+}
+
+function total() {
+    document.querySelectorAll('.cart-list').forEach(item =>{
+        item.
+    })
 }
