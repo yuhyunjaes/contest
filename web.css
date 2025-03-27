@@ -14,7 +14,7 @@ body {
     width: 100vw;
     background-color: white;
     position: relative;
-    animation: 4s linear wra;
+    /* animation: 4s linear wra; */
 }
 @keyframes wra {
     from, to {
@@ -22,6 +22,143 @@ body {
     }
 }
 
+#user:checked ~ .new_user {
+    display: block;
+}
+
+.new_user {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(10px);
+    z-index: 998;
+}
+
+.real_userbox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newuser_text {
+    width: 500px;
+    height: 600px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 1px 10px rgb(181, 181, 181);
+}
+.newuser_text_header {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.newuser_text_header h1 {
+    font-size: 35px;
+}
+.newuser_text_header label {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 35px;
+    top: 35px;
+}
+.newuser_text_header label::after {
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: orangered;
+    position: absolute;
+    rotate: 45deg;
+    transition: 0.5s;
+}
+.newuser_text_header label::before {
+    content: '';
+    transition: 0.5s;
+    width: 2px;
+    height: 30px;
+    background-color: orangered;
+    position: absolute;
+    rotate: -45deg;
+}
+.newuser_text_header label:hover::after,
+.newuser_text_header label:hover::before {
+    background-color: #ffa685;
+}
+.newuser_text_body {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+}
+.newuser_text_body div {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newuser_text_body div label {
+    position: absolute;
+    left: 74px;
+    top: 0;
+    font-weight: 900;
+}
+.newuser_text_body div:nth-child(1) {
+    top: 20px;
+}
+.newuser_text_body div:nth-child(2) {
+    top: 110px;
+}
+.newuser_text_body div:nth-child(3) {
+    top: 210px;
+}
+.newuser_text_body div:nth-child(4) {
+    top: 310px;
+}
+.newuser_text_body div input[type="text"],
+.newuser_text_body div input[type="email"],
+.newuser_text_body div input[type="password"] {
+    font-size:15px;
+    font-weight: 900;
+    position: absolute;
+    bottom: 0;
+    width: 70%;
+    height: 55px;
+    border: 2px solid orangered;
+    border-radius: 10px;
+}
+.newuser_text_body div:nth-child(5) {
+    position: absolute;
+    bottom: 30px;
+    width: 70%;
+    height: 60px;
+}
+.newuser_text_body div:nth-child(5) input {
+    border: none;
+    border-radius: 10px;
+    width: 424px;
+    height: 60px;
+    background-color: orangered;
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    cursor: pointer;
+}
 .loading {
     overflow: hidden;
     animation: 4s linear none_white;
@@ -348,7 +485,8 @@ nav {
 .menu > li:hover > a {
     color: #ff4500;
 }
-.buumenu > li{
+.buumenu > li,
+.buumenu > label{
     list-style: none;
     float: left;
     height: 100%;
@@ -376,7 +514,8 @@ nav {
     color: black;
     border: 1px solid black;
 }
-.buumenu > li:nth-child(4) a {
+.buumenu > li:nth-child(4) label {
+    cursor: pointer;
     border-radius: 30px;
     text-align: center;
     line-height: 40px;
@@ -386,11 +525,12 @@ nav {
     color: white;
     margin: 15px 0 15px 0;
 }
-.buumenu > li:nth-child(4) a:hover {
+.buumenu > li:nth-child(4) label:hover {
     background-color: rgb(255, 158, 123);
     color: rgb(255, 255, 255);
 }
-.buumenu a {
+.buumenu a,
+.buumenu label {
     font-weight: 900;
     font-size: 14px;
     display: block;
@@ -881,6 +1021,15 @@ input[type="radio"] {
     flex-wrap: wrap;
     position: relative;
 }
+.small_cate a {
+    font-size: 20px;
+    position: absolute;
+    top: 270px;
+    text-decoration: none;
+    color: orangered;
+    font-weight: 900;
+    right: 50px;
+}
 .obj_box2,
 .obj_box3 {
     width: 240px;
@@ -1126,6 +1275,11 @@ input[type="radio"] {
     width: 20%;
     height: 100%;
 }
+.back_box a,
+.next_box a {
+    font-weight: 900;
+}
+
 .notice_menu {
     width: 60%;
     height: 100%;
@@ -1133,6 +1287,7 @@ input[type="radio"] {
 .notice_menu a,
 .notice_menu span {
     margin: 0 20px 0 20px;
+    font-weight: 900;
 }
 
 
@@ -1208,7 +1363,7 @@ input[type="radio"] {
     width: 300px;
     height: 100px;
     background-color: white;
-    box-shadow: 0 5px 10px black;
+    box-shadow: 0 5px 10px rgb(226, 226, 226);
     display: flex;
     border-radius: 20px;
     cursor: pointer;

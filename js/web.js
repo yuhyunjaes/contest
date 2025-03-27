@@ -4,7 +4,33 @@ function nonenext() {
 
 let mess = localStorage.getItem('key1'); 
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('forr').addEventListener('submit', function(event){
+        const idd = document.getElementById('idd'),
+        pass = document.getElementById('pass'),
+        nam = document.getElementById('nam'),
+        ema = document.getElementById('ema');
+    
+        if(idd.value.length === 0) {
+            alert('아이디를 입력해주세요');
+            idd.focus();
+            event.preventDefault();
+        } else if(pass.value.length === 0) {
+            alert('비밀번호를 입력해주세요');
+            pass.focus();
+            event.preventDefault();
+        } else if(nam.value.length === 0) {
+            alert('이름을 입력해주세요');
+            nam.focus();
+            event.preventDefault();
+        } else if(ema.value.length === 0) {
+            alert('이메일을 입력해주세요');
+            ema.focus();
+            event.preventDefault();
+        }
+    })
+
+    
     if (mess == 'nonee') {
         document.getElementById('wrap').style.animation = 'popo';
         document.getElementById('loading').style.height = '0';

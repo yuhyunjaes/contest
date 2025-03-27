@@ -42,16 +42,51 @@ $now_page = ceil($total / $limit);
     <script src="js/web.js"></script>
 </head>
 <body>
-    <div class="loading" id="loading">
+    <!-- <div class="loading" id="loading">
         <div class="loading_box">
             <div class="rotate_box" id="rotate_box"></div>
             <div class="loading_text" id="loading_text">
                 <p>GIFTS:Mall</p>
             </div>
         </div>
-    </div>
+    </div> -->
     <div id="wrap">
-        
+        <input type="radio" name="user" id="user" checked>
+        <input type="radio" name="user" id="user_none">
+        <div class="new_user" id="new_user">
+            <div class="real_userbox">
+                <form action="action.php" method="POST" id="forr">
+                    <div class="newuser_text">
+                        <div class="newuser_text_header">
+                            <h1>회원가입</h1>
+                            <label for="user_none"></label>
+                        </div>
+                        <div class="newuser_text_body">
+                            <div>
+                                <label for="idd">아이디</label>
+                                <input type="text" name="idd" id="idd" placeholder=" 아이디를 입력하세요">
+                            </div>
+                            <div>
+                                <label for="pass">비밀번호</label>
+                                <input type="password" name="pass" id="pass" placeholder=" 비밀번로를 입력하세요">
+                            </div>
+                            <div>
+                                <label for="nam">이름</label>
+                                <input type="text" name="nam" id="nam" placeholder=" 이름을 입력하세요">
+                            </div>
+                            <div>
+                                <label for="ema">이메일</label>
+                                <input type="email" name="ema" id="ema" placeholder=" 이메일을 입력하세요">
+                            </div>
+                            <div>
+                                <input type="submit" value="가입하기">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <input type="radio" name="side" id="side1">
         <input type="radio" name="side" id="side2">
         <div class="sidemenu">
@@ -65,7 +100,7 @@ $now_page = ceil($total / $limit);
                         <li><a href="#">관리자</a></li>
                         <li><a href="cart.php">장바구니</a></li>
                         <li><a href="#">로그인</a></li>
-                        <li><a href="#">회원가입</a></li>
+                        <li><a href="new_user.php">회원가입</a></li>
                     </ul>
                 </div>
             </div>
@@ -136,7 +171,7 @@ $now_page = ceil($total / $limit);
                             <a href="#">로그인</a>
                         </li>
                         <li>
-                            <a href="#">회원가입</a>
+                            <label for="user">회원가입</label>
                         </li>
                     </ul>
                 </div>
@@ -292,6 +327,7 @@ $now_page = ceil($total / $limit);
                                 </div>
                             </div>
                             <div class="small_cate">
+                                <a href="#">바로가기 ></a>
                                 <div class="obj_box2"><div><p>센트룸</p><p>27,000원</p></div></div>
                                 <div class="obj_box3"><div><p>닥터브라이언</p><p>2,000원</p></div></div>
                             </div>
@@ -305,6 +341,7 @@ $now_page = ceil($total / $limit);
                                 </div>
                             </div>
                             <div class="small_cate">
+                                <a href="#">바로가기 ></a>  
                                 <div class="obj_box2" id="cate_img1-1"><div><p>PANTONE PD충전 보조배터리</p><p>24,400원</p></div></div>
                                 <div class="obj_box3" id="cate_img1-2"><div><p>Bowie D05 무선 블루투스 5.3 헤드셋 </p><p>36,900원</p></div></div>
                             </div>
@@ -318,6 +355,7 @@ $now_page = ceil($total / $limit);
                                 </div>
                             </div>
                             <div class="small_cate">
+                                <a href="#">바로가기 ></a>  
                                 <div class="obj_box2" id="cate_img2-1"><div><p>명품 자동 장우산</p><p>31,600원</p></div></div>
                                 <div class="obj_box3" id="cate_img2-2"><div><p>14K 윙블링 원터치 링 귀걸이(주문제작)</p><p>250,000원</p></div></div>
                             </div>
@@ -331,6 +369,7 @@ $now_page = ceil($total / $limit);
                                 </div>
                             </div>
                             <div class="small_cate">
+                                <a href="#">바로가기 ></a>
                                 <div class="obj_box2" id="cate_img3-1"><div><p>에스쁘아 솔리드 퍼퓸 4.2g</p><p>26,000원</p></div></div>
                                 <div class="obj_box3" id="cate_img3-2"><div><p>호텔도슨 향수 오드퍼퓸 75ml</p><p>153,000원</p></div></div>
                             </div>
@@ -344,6 +383,7 @@ $now_page = ceil($total / $limit);
                                 </div>
                             </div>
                             <div class="small_cate">
+                                <a href="#">바로가기 ></a>
                                 <div class="obj_box2" id="cate_img4-1"><div><p>어노브 딥 데미지 트리트먼트 EX 더블</p><p>29,800원</p></div></div>
                                 <div class="obj_box3" id="cate_img4-2"><div><p style="font-size: 10px;">려 루트젠 여성맞춤 볼륨 탈모증상케어 샴퓨 353ml</p><p>21,900원</p></div></div>
                             </div>

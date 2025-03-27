@@ -171,7 +171,26 @@ const vecon = document.getElementById('ve_con')
         sto.style.opacity = '0';
         sto.style.pointerEvents = 'none';
     });
-
+    document.getElementById('last_by').addEventListener('click',()=>{
+        if(document.getElementById('price_box').innerText !== "0원") {
+            document.getElementById('end_text').innerHTML = `
+                방금 비회원 <span>${document.getElementById('ran').value}</span>님이 <br>
+                <span>${document.getElementById('price_box').textContent}</span>을 결제하셨습니다!
+            `;
+            document.getElementById('modal_non').click();
+            document.querySelector('.end_box').style.height = '100vh';
+            setTimeout(()=>{
+                document.querySelector('.end_box').style.height = '0';
+                document.querySelectorAll('.cart-list').forEach(item=>{
+                    item.remove();
+                })
+                document.getElementById('no_obj').style.display = 'block';
+                document.getElementById('price_box').textContent = '0원';
+            }, 3000);
+        } else {
+            alert('담긴상품이 없습니다.');
+        }
+    })
 
 
     document.querySelectorAll('.item').forEach(items =>{
@@ -206,9 +225,11 @@ const vecon = document.getElementById('ve_con')
                 <img src="${item.itimg}"></img>
                 <span class="pri">${item.itprice}</span>
                 <span class="po">${item.itpost}</span>
-                <button class="up" onclick="up(event)">증가</button>
-                <button class="down" onclick="down(event)">증감</button>
+                <div class="hap_box">
+                <button class="down" onclick="down(event)">-</button>
                 <span class="hap">${item.ithap}</span>
+                <button class="up" onclick="up(event)">+</button>
+                </div>
                 `;
                 newitem.classList.add('cart-list');
                 newitem.draggable = true;
@@ -218,6 +239,7 @@ const vecon = document.getElementById('ve_con')
             }
         })
         noupdate();
+        total();
         
     }
 
@@ -255,6 +277,7 @@ const vecon = document.getElementById('ve_con')
             }
         })
         noupdate();
+        total();
 
     }
     document.getElementById('shop_item').addEventListener('dragover', over1);
@@ -277,35 +300,46 @@ const vecon = document.getElementById('ve_con')
 function skiptime(skip) {
     document.getElementById('vi').currentTime += skip;
 }
-let hap = 1;
-let price = 0;
-let totalprice = 0;
-
+let hap = 0;
 function up(event) {
-    const partext = event.target.parentElement.querySelector('.naa').innerText;
+    const partext = event.target.parentElement.parentElement.querySelector('.naa').innerText;
     lii.forEach(item=>{
         if(item.itname === partext) {
             hap = item.ithap += 1;
             event.target.parentElement.querySelector('.hap').textContent = hap;
         }
     })
+    total();
 }
 
 function down(event) {
-    const partext = event.target.parentElement.querySelector('.naa').innerText;
+    const partext = event.target.parentElement.parentElement.querySelector('.naa').innerText;
     lii.forEach(item=>{
         if(item.itname === partext && hap >= 1){
             hap = item.ithap -= 1;
             event.target.parentElement.querySelector('.hap').textContent = hap;
         }
         if(hap === 0) {
-            event.target.parentElement.remove();
+            event.target.parentElement.parentElement.remove();
         }
     })
+    total();
 }
 
 function total() {
+    let price;
+    let total = 0;
+    let post = 0;
     document.querySelectorAll('.cart-list').forEach(item =>{
-        item.
+        price = Number(item.querySelector('.pri').textContent);
+        hap = Number(item.querySelector('.hap').textContent);
+        post = Number(item.querySelector('.po').textContent);
+        total += price * hap;
+        if(total >= 20000) {
+            total;
+        } else {
+            total = total + post;
+        }
     })
+    document.getElementById('price_box').textContent = total.toLocaleString()+'원';
 }
