@@ -1,0 +1,642 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+}
+.login_box {
+    z-index: 9;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    top: 30px;
+    right: 30px;
+    position: absolute;
+    background-color: orangered;
+    border: 1px solid rgb(224, 224, 224);
+    overflow: hidden;
+}
+.logbox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.logbox::after {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 20%;
+    content: '';
+}
+.logbox::before {
+    width: 35px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50% 50% 0 0;
+    position: absolute;
+    bottom: -1%;
+    content: '';
+}
+.login_box:hover ~ .manager_me {
+    opacity: 1;
+    pointer-events: all;
+}
+.manager_me {
+    z-index: 9;
+    transition: 0.5s;
+    opacity: 0;
+    pointer-events: none;
+    width: 150px;
+    height: 50px;
+    background-color: orangered;
+    position: fixed;
+    top: 30px;
+    right: 90px;
+}
+.mana_me {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-weight: 900;
+}
+.mana_me::after {
+    width: 20px;
+    height: 20px;
+    background-color: orangered;
+    content: '';
+    rotate: 45deg;
+    position: absolute;
+    right: -5px;
+}
+
+
+.manager_side {
+    width: calc(15% - 5px);
+    height: 100%;
+    position: relative;
+}
+.manager_side::after {
+    width: 5px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    content: '';
+    background: orangered;
+}
+.manager_side_logo {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.manager_side_logo img {
+    width: 200px;
+    height: 50px;
+}
+
+.manager_side_menu {
+    width: 100%;
+    height: calc(100% - 50px);
+    position: relative;
+}
+.manager_side_menu div {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: orangered;
+    transition: 0.5s;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+.manager_side_menu label {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-weight: 900;
+    cursor: pointer;
+}
+.manager_side_menu span {
+    position: absolute;
+    right: 30px;
+}
+.manager_side_menu label {
+    background-color: white;
+}
+
+.manager_side_menu label p {
+    text-align: left;
+    position: absolute;
+    left: 25%;
+    color: rgb(0, 0, 0);
+}
+.manager_body {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modalbox1,
+.modalbox2,
+.modalbox3 {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+input[type="radio"] {
+    display: none;
+}
+#manager_modal1:checked ~ .modalbox1,
+#manager_modal2:checked ~ .modalbox2,
+#manager_modal3:checked ~ .modalbox3 {
+    display: block;
+}
+.modal1,
+.modal2,
+.modal3 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.table_container {
+    width: 1300px;
+    height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.title_box {
+    width: 1300px;
+    height: 20%;
+}
+.title {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title form {
+    width: 500px;
+    position: absolute;
+    display: flex;
+    height: 50px;
+    border: 5px solid orangered;
+    border-radius: 30px;
+}
+.title form input:nth-child(1) {
+    width: 80%;
+    border-radius: 30px 0 0 30px;
+}
+.title form input:nth-child(2) {
+    cursor: pointer;
+    width: 20%;
+    color: orangered;
+    font-weight: 900;
+    background-color: transparent;
+}
+.title form input {
+    border: none;
+    margin: 0;
+    height: 100%;
+}
+.title_box  h1 {
+    position: absolute;
+    left: 0;
+    font-size: 40px;
+}
+.title_box  h1 span {
+    border-bottom: 5px solid orangered;
+}
+
+.table_container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table_container table tr {
+    height: 50px;
+}
+.table_container table tr th {
+    height: 50px;
+    background-color: orangered;
+    color: white;
+}
+.table_container table tr th:nth-child(1),
+.table_container table tr th:nth-child(3) {
+    width: 15%;
+}
+.table_container table tr th:nth-child(2) {
+    width: 30%;
+}
+.table_container table tr th:nth-child(4),
+.table_container table tr th:nth-child(5) {
+    width: 20%;
+}
+.table_container table tr:nth-child(1) {
+    position: sticky;
+    top: -1px;
+}
+.table_container table tr td:nth-child(2) {
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+.notice_container {
+    width: 1300px;
+    height: 60%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+}
+.notice_container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.notice_container table tr:nth-child(1) {
+    position: sticky;
+    top: -1px;
+}
+.notice_container table tr {
+    height: 50px;
+}
+.notice_container table th {
+    background-color: orangered;
+    color: white;
+    height: 50px;
+}
+.notice_container table tr > th:nth-child(1),
+.notice_container table tr > th:nth-child(3) {
+    width: 15%;
+}
+.notice_container table tr > th:nth-child(2) {
+    width: 50%;
+}
+.notice_container table tr > td:nth-child(4),
+.notice_container table tr > td:nth-child(5) {
+    width: 10%;
+}
+.updatebtn,
+.deletebtn {
+    width: 70px;
+    height: 30px;
+    display: block;
+    border-radius: 30px;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.updatebtn {
+    background-color: rgb(22, 136, 7);
+}
+.updatebtn:hover {
+    background-color: rgb(54, 160, 39);
+}
+.deletebtn {
+    background-color: rgb(189, 25, 25);
+}
+.deletebtn:hover {
+    background-color: rgb(167, 76, 76);
+}
+.loa {
+    text-decoration: none;
+    color: orangered;
+    font-weight: 900;
+    transition: 0.5s;
+}
+.loa:hover {
+    color: orange;
+}
+
+.notice_footer {
+    width: 1300px;
+    height: 20%;
+    position: relative;
+}
+.notice_footer label {
+    transition: 0.5s;
+    color: white;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 120px;
+    height: 40px;
+    background-color: orangered;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    border-radius: 30px;
+}
+.notice_footer label:hover {
+    background-color: rgb(255, 134, 91);
+}
+.new_notice_container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(10px);
+    top: 0;
+    z-index: 2;
+    display: none;
+}
+#new_notice_open:checked ~ .new_notice_container {
+    display: block;
+}
+.new_notice_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.new_notice {
+    width: 500px;
+    height: 420px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 1px 10px rgb(218, 218, 218);
+}
+.new_notice_header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.new_notice_header h1 {
+    font-size: 35px;
+}
+.new_notice_header label {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 35px;
+    cursor: pointer;
+}
+.ex_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.ex_box:hover::after,
+.ex_box:hover::before {
+    background-color: rgb(255, 134, 91);
+}
+.ex_box::after {
+    transition: 0.5s;
+    width: 2px;
+    height: 30px;
+    background-color: orangered;
+    content: '';
+    position: absolute;
+    rotate: 45deg;
+}
+.ex_box::before {
+    transition: 0.5s;
+    rotate: -45deg;
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: orangered;
+}
+
+
+.new_notice_body {
+    width: 100%;
+    height: calc(100% - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.new_notice_body > div {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+}
+.new_notice_body > div:nth-child(1) {
+    top: 20px;
+}
+.new_notice_body > div:nth-child(2) {
+    top: 110px;
+}
+.new_notice_body > div:nth-child(3) {
+    top: 200px;
+}
+.new_notice_body > div:nth-child(4) {
+    top: 290px;
+}
+.new_notice_body > div > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.new_notice_body > div > div select,
+.new_notice_body > div > div input {
+    border: 2px solid orangered;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 900;
+    width: 70%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+}
+.new_notice_body > div > div label {
+    position: absolute;
+    left: 74px;
+    top: 0;
+    font-weight: 900;
+}
+form {
+    width: 100%;
+    height: 100%;
+}
+.new_notice_body input[type="submit"] {
+    border: none;
+    border-radius: 10px;
+    width: 70%;
+    height: 60px;
+    background-color: orangered;
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px;
+}
+
+
+.up_notice_container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backdrop-filter: blur(10px);
+    top: 0;
+    z-index: 2;
+    display: none;
+}
+#up_notice_open:checked ~ .up_notice_container {
+    display: block;
+}
+.up_notice_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.up_notice {
+    width: 500px;
+    height: 420px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 1px 10px rgb(218, 218, 218);
+}
+.up_notice_header {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.up_notice_header h1 {
+    font-size: 35px;
+}
+.up_notice_header label {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 35px;
+    cursor: pointer;
+}
+.ex_box {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.ex_box:hover::after,
+.ex_box:hover::before {
+    background-color: rgb(255, 134, 91);
+}
+.ex_box::after {
+    transition: 0.5s;
+    width: 2px;
+    height: 30px;
+    background-color: orangered;
+    content: '';
+    position: absolute;
+    rotate: 45deg;
+}
+.ex_box::before {
+    transition: 0.5s;
+    rotate: -45deg;
+    content: '';
+    width: 2px;
+    height: 30px;
+    background-color: orangered;
+}
+
+
+.up_notice_body {
+    width: 100%;
+    height: calc(100% - 90px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.up_notice_body > div {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+}
+.up_notice_body > div:nth-child(1) {
+    top: 20px;
+}
+.up_notice_body > div:nth-child(2) {
+    top: 110px;
+}
+.up_notice_body > div:nth-child(3) {
+    top: 200px;
+}
+.up_notice_body > div:nth-child(4) {
+    top: 290px;
+}
+.up_notice_body > div > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.up_notice_body > div > div select,
+.up_notice_body > div > div input {
+    border: 2px solid orangered;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 900;
+    width: 70%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+}
+.up_notice_body > div > div label {
+    position: absolute;
+    left: 74px;
+    top: 0;
+    font-weight: 900;
+}
+form {
+    width: 100%;
+    height: 100%;
+}
+.up_notice_body input[type="submit"] {
+    border: none;
+    border-radius: 10px;
+    width: 70%;
+    height: 60px;
+    background-color: orangered;
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 30px;
+}
