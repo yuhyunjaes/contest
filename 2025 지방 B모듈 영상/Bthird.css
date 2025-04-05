@@ -1,0 +1,213 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 600px;
+    height: 500px;
+    box-shadow: 0 1px 10px rgb(235, 235, 235);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.shop_header {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shop_body {
+    width: 100%;
+    height: 85%;
+    display: flex;
+}
+.shop_show {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shop_show_container,
+.shop_body_container {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    box-shadow: 0 1px 10px rgb(235, 235, 235);
+    border-radius: 10px;
+}
+.shop_show_container_header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shop_show_container_header label {
+    font-weight: 900;
+    margin: 0 5px 0 5px;
+}
+
+.shop_show_container_body {
+    width: 100%;
+    height: 90%;
+}
+input[type="radio"] {
+    display: none;
+}
+.shop_box1,
+.shop_box2,
+.shop_box3,
+.shop_box4,
+.shop_box5 {
+    width: 100%;
+    height: 100%;
+    display: none;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#shop1:checked ~ .shop_box1,
+#shop2:checked ~ .shop_box2,
+#shop3:checked ~ .shop_box3,
+#shop4:checked ~ .shop_box4,
+#shop5:checked ~ .shop_box5 {
+    display: block;
+}
+.shop_box_container {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(235, 235, 235);
+    margin: 10px 30px 10px 30px;
+}
+
+.shop_by {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart_box {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 0 1px 10px rgb(235, 235, 235);
+    border-radius: 10px;
+}
+.card_list {
+    border-radius: 10px;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
+    background-color: aliceblue;
+    position: relative;
+    margin: 0 0 15px 0;
+}
+.card_list img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.item_name {
+    position: absolute;
+    left: 5px;
+    font-size: 12px;
+}
+.real_price {
+    position: absolute;
+    left: 5px;
+    top: 95px;
+    font-size: 14px;
+    font-weight: 900;
+}
+.real_post {
+    font-size: 12px;
+    position: absolute;
+    left: 5px;
+    top: 115px;
+}
+.up_down_box {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+.up_down_box button,
+.up_down_box span {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border: none;
+}
+.up_down_box button:nth-child(3) {
+    background-color: orangered;
+    color: white;
+}
+.now_price {
+    position: absolute;
+    right: 5px;
+    bottom: 30px;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.user_box {
+    width: 100%;
+    height: 10%;
+    box-shadow: 0 1px 10px rgb(235, 235, 235);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user_box p {
+    font-size: 14px;
+}
+.user_box span {
+    color: orangered;
+    font-weight: 900;
+}
+
+.total_box,
+.by_bt {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 10px rgb(235, 235, 235);
+    border-radius: 10px;
+    width: 100%;
+    height: 15%;
+}
+.total_box span {
+    color: orangered;
+    font-weight: 900;
+}
+.total_box p {
+    position: absolute;
+    top: 10px;
+}
+.total_box div {
+    position: absolute;
+    bottom: 10px;
+    font-size: 10px;
+}

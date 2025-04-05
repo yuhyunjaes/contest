@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Bthird.css">
+    <script src="Bthird.js"></script>
+</head>
+<body>
+    <div id="wrap">
+
+        <div class="container">
+            <div class="shop_header">
+                <h1>비회원 주문</h1>
+            </div>
+            <div class="shop_body">
+                <div class="shop_show">
+                    <div class="shop_show_container">
+                        <div class="shop_show_container_header">
+                            <div class="open_box">
+                                <label for="shop1">건강식품</label>
+                                <label for="shop2">디지털</label>
+                                <label for="shop3">팬시</label>
+                                <label for="shop4">향수</label>
+                                <label for="shop5">헤어케어</label>
+                            </div>
+                        </div>
+                        <div class="shop_show_container_body" id="shop_show_container_body" ondragover="over1(event)" ondrop="drop1(event)">
+                            <input type="radio" name="shop" id="shop1" checked>
+                            <div class="shop_box1">
+                                <div class="shop_box_container">
+                                    <div draggable="true" class="item">이뮨 멀티비타민&미네랄</div>
+                                    <div draggable="true" class="item">센트룸</div>
+                                    <div draggable="true" class="item">닥터브라이언</div>
+                                    <div draggable="true" class="item">액티브 멀티포맨</div>
+                                    <div draggable="true" class="item">네이처메이드B12</div>
+                                </div>
+                            </div>
+                            
+                            <input type="radio" name="shop" id="shop2">
+                            <div class="shop_box2">
+                                <div class="shop_box_container"></div>
+                            </div>
+
+                            <input type="radio" name="shop" id="shop3">
+                            <div class="shop_box3">
+                                <div class="shop_box_container"></div>
+                            </div>
+
+                            <input type="radio" name="shop" id="shop4">
+                            <div class="shop_box4">
+                                <div class="shop_box_container"></div>
+                            </div>
+
+                            <input type="radio" name="shop" id="shop5">
+                            <div class="shop_box5">
+                                <div class="shop_box_container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop_by">
+                    <div class="shop_body_container">
+                        <div class="cart_box" id="cart_box" ondragover="over(event)" ondrop="drop(event)"></div>
+                        <div class="user_box">
+                            <p>비회원 ID <span class="user_id"></span></p>
+                        </div>
+                        <div class="total_box" id="total_box">
+                            <p class="totall" id="totall">합계 <span>0</span>원</p>
+                            <div>(20,000원 이상 구매시 무료배송)</div>
+                        </div>
+                        <div class="by_bt"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

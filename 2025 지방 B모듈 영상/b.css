@@ -1,0 +1,247 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.btn_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#modal:checked ~ .container {
+    display: block;
+}
+.last_box {
+    position: relative;
+    display: none;
+    width: 500px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(245, 245, 245);
+}
+.last_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.container {
+    display: none;
+    width: 700px;
+    height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(230, 230, 230);
+    overflow: hidden;
+}
+.cart_header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart_body {
+    width: 100%;
+    height: 520px;
+    display: flex;
+}
+.show_shop_box {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.show_shop_box_container {
+    margin: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(230, 230, 230);
+}
+.show_shop_box_container_header {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.btn_box label{ 
+    font-weight: 900;
+    margin: 0 10px 0 10px;
+}
+
+.show_shop_box_container_body {
+    width: 100%;
+    height: 85%;
+}
+input[type="radio"] {
+    display: none;
+}
+.shop_modal_box1,
+.shop_modal_box2,
+.shop_modal_box3,
+.shop_modal_box4,
+.shop_modal_box5 {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.item {
+    margin: 5px;
+    width: 140px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(230, 230, 230);
+}
+#shop_modal1:checked ~ .shop_modal_box1,
+#shop_modal2:checked ~ .shop_modal_box2,
+#shop_modal3:checked ~ .shop_modal_box3,
+#shop_modal4:checked ~ .shop_modal_box4,
+#shop_modal5:checked ~ .shop_modal_box5 {
+    opacity: 1;
+    pointer-events: all;
+}
+.by_box {
+    width: 30%;
+    height: 100%;
+}
+.cart {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 0 1px 10px rgb(230, 230, 230);
+}
+.show_cart {
+    width: 100%;
+    height: 65%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.cart-list {
+    width: calc(100% - 10px);
+    height: 150px;
+    box-shadow: 0 1px 10px rgb(230, 230, 230);
+    border-radius: 10px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+.cart-list img{
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    top: 0;
+    object-fit: cover;
+    pointer-events: none;
+}
+.item_name {
+    position: absolute;
+    bottom: 25%;
+    font-size: 12px;
+    left: 5px;
+}
+.item_price {
+    font-size: 12px;
+    position: absolute;
+    font-weight: 900;
+    left: 5px;
+    bottom: 15%;
+}
+.post_box {
+    font-size: 12px;
+    position: absolute;
+    font-weight: 900;
+    left: 5px;
+    bottom: 5%;
+}
+.item_now_price {
+    position: absolute;
+    bottom: 25px;
+    right: 5px;
+    font-size: 14px;
+}
+.up_down_hap {
+    display: flex;
+    position: absolute;
+    bottom: 5px;
+    right:0;
+}
+.up_down_hap button,
+.up_down_hap p {
+    margin: 0 5px 0 5px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    text-align: center;
+    line-height: 20px;
+    font-size: 10px;
+}
+.up_down_hap button:nth-child(3) {
+    background-color: orangered;
+    color: white;
+}
+
+.show_price {
+    width: 100%;
+    height: 35%;
+}
+.user_box {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shop_totalbox {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.shop_totalbox div {
+    position: absolute;
+    bottom: 0;
+    font-size: 10px;
+}
+.bybt {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bybt button {
+    border-radius: 10px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    background-color: orangered;
+    color: white;
+}
+.shop_totalbox span {
+    color: orangered;
+    font-weight: 900;
+    font-size: 18px;
+}

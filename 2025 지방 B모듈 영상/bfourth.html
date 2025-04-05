@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bfourth.css">
+    <script src="bfourth.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <label for="open">OPEN</label>
+
+        <div class="last_box">
+            <div class="last_text"></div>
+        </div>
+
+        <input type="radio" name="modal" id="open">
+        <input type="radio" name="modal" id="close">
+        <div class="container">
+            <div class="shop_header">
+                <h1>비회원 주문</h1>
+                <label for="close">x</label>
+            </div>
+            <div class="shop_body">
+                <div class="shop_show_box" id="shop_show_box" ondragover="over1(event)" ondrop="drop1(event)">
+                    <div class="container_box">
+                        <div class="item_control_box">
+                            <div class="label_box">
+                                <label for="show_item1">건강식품</label>
+                                <label for="show_item2">디지털</label>
+                                <label for="show_item3">팬시</label>
+                                <label for="show_item4">향수</label>
+                                <label for="show_item5">헤어케어</label>
+                            </div>
+                        </div>
+                        <div class="show_item_box">
+                            <input type="radio" name="show_item" id="show_item1" checked>
+                            <div class="shop_item_box1">
+                                <div class="item_container">
+                                    <div draggable="true" class="item"><span>75,000</span><img src="image/건강식품/1.PNG" alt=""><p class="show_item_name">이뮨 멀티비타민&미네랄</p></div>
+                                    <div draggable="true" class="item"><span>27,000</span><img src="image/건강식품/2.PNG" alt=""><p class="show_item_name">센트룸</p></div>
+                                    <div draggable="true" class="item"><span>2,000</span><img src="image/건강식품/3.PNG" alt=""><p class="show_item_name">닥터브라이언</p></div>
+                                    <div draggable="true" class="item"><span>30,000</span><img src="image/건강식품/4.PNG" alt=""><p class="show_item_name">액티브 멀티포맨</p></div>
+                                    <div draggable="true" class="item"><span>30,000</span><img src="image/건강식품/5.PNG" alt=""><p class="show_item_name">네이처메이드B12</p></div>
+                                </div>
+                            </div>
+
+                            <input type="radio" name="show_item" id="show_item2">
+                            <div class="shop_item_box2">
+                                <div class="item_container">
+                                    <div draggable="true" class="item"><span>24,400</span><img src="image/디지털/1.PNG" alt=""><p class="show_item_name">PANTONE PD충전 보조배터리</p></div>
+                                    <div draggable="true" class="item"><span>36,900</span><img src="image/디지털/2.PNG" alt=""><p class="show_item_name">Bowie D05 무선 블루투스 5.3 헤드셋</p></div>
+                                    <div draggable="true" class="item"><span>70,750</span><img src="image/디지털/3.PNG" alt=""><p class="show_item_name">독거미 F99 기계식 키보드</p></div>
+                                    <div draggable="true" class="item"><span>1,254,000</span><img src="image/디지털/4.jpg" alt=""><p class="show_item_name">파이널마우스 스타라이트12 페가수스 미디엄</p></div>
+                                    <div draggable="true" class="item"><span>146,000</span><img src="image/디지털/5.PNG" alt=""><p class="show_item_name">보이저5200 블루투스 이어폰</p></div>
+                                </div>
+                            </div>
+
+                            <input type="radio" name="show_item" id="show_item3">
+                            <div class="shop_item_box3">
+                                <div class="item_container">
+                                    <div draggable="true" class="item"><span>31,600</span><img src="image/팬시/1.PNG" alt=""><p class="show_item_name">명품 자동 장우산</p></div>
+                                    <div draggable="true" class="item"><span>250,000</span><img src="image/팬시/2.PNG" alt=""><p class="show_item_name">14K 윙블링 원터치 링 귀걸이(주문제작)</p></div>
+                                    <div draggable="true" class="item"><span>265,000</span><img src="image/팬시/3.PNG" alt=""><p class="show_item_name">14K 윙블링 메르시 목걸이(주문제작)</p></div>
+                                    <div draggable="true" class="item"><span>38,900</span><img src="image/팬시/4.PNG" alt=""><p class="show_item_name">게이밍 이어폰 VJJB NI</p></div>
+                                    <div draggable="true" class="item"><span>320,000</span><img src="image/팬시/5.PNG" alt=""><p class="show_item_name">인스탁스 미니 에보</p></div>
+                                </div>
+                            </div>
+
+                            <input type="radio" name="show_item" id="show_item4">
+                            <div class="shop_item_box4">
+                                <div class="item_container">
+                                    <div draggable="true" class="item"><span>26,000</span><img src="image/향수/1.PNG" alt=""><p class="show_item_name">에스쁘아 솔리드 퍼퓸 4.2g</p></div>
+                                    <div draggable="true" class="item"><span>153,000</span><img src="image/향수/2.PNG" alt=""><p class="show_item_name">호텔도슨 향수 오드퍼퓸 75ml</p></div>
+                                    <div draggable="true" class="item"><span>64,500</span><img src="image/향수/3.PNG" alt=""><p class="show_item_name">랑방 레 플레르 EDT 90ml</p></div>
+                                    <div draggable="true" class="item"><span>103,000</span><img src="image/향수/4.PNG" alt=""><p class="show_item_name">몽블랑 익스플로러 EDP 60ml</p></div>
+                                    <div draggable="true" class="item"><span>58,900</span><img src="image/향수/5.PNG" alt=""><p class="show_item_name">캘빈클라인 One EDT 50ml</p></div>
+                                </div>
+                            </div>
+
+                            <input type="radio" name="show_item" id="show_item5">
+                            <div class="shop_item_box5">
+                                <div class="item_container">
+                                    <div draggable="true" class="item"><span>29,800</span><img src="image/헤어케어/1.PNG" alt=""><p class="show_item_name">어노브 딥 데미지 트리트먼트 EX 더블</p></div>
+                                    <div draggable="true" class="item"><span>21,900</span><img src="image/헤어케어/2.PNG" alt=""><p class="show_item_name">려 루트젠 여성맞춤 볼륨 탈모증상케어 샴퓨 353ml</p></div>
+                                    <div draggable="true" class="item"><span>19,800</span><img src="image/헤어케어/3.PNG" alt=""><p class="show_item_name">라보에이치 두피쿨링&노세범 샴푸 333ml</p></div>
+                                    <div draggable="true" class="item"><span>52,200</span><img src="image/헤어케어/4.PNG" alt=""><p class="show_item_name">모로칸오일 헤어트리트먼트 100ml</p></div>
+                                    <div draggable="true" class="item"><span>16,000</span><img src="image/헤어케어/5.PNG" alt=""><p class="show_item_name">닥터포헤어 피토프레시 헤어쿨링 스프레이 150ml</p></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop_cart_box">
+                    <div class="container_box">
+                        <div class="cart_box" id="cart_box" ondragover="over(event)" ondrop="drop(event)"></div>
+                        <div class="total_box">
+                            <p class="total_price">합계 <span class="last_total">0</span>원</p>
+                            <div>(20,000원 이상 구매시 무료배송)</div>
+                        </div>
+                        <div class="user_box">
+                            <p class="id_box"></p>
+                        </div>
+                        <div class="by_box">
+                            <button onclick="last()">주문하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

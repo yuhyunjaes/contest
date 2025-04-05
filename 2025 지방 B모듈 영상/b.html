@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="b.css">
+    <script src="b.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <!-- 버튼을 눌러 비회원 구매 모달창이 실행 -->
+        <div class="btn_box">
+            <label for="modal">열기</label>
+        </div>
+
+        <!-- 구매완료시 뜨는 메세지 창 -->
+        <div class="last_box">
+            <p class="last_text"></p>
+        </div>
+
+        <!-- 모달을 열고,닫을수있는 라디오 -->
+        <input type="radio" name="modal" id="modal">
+        <input type="radio" name="modal" id="modal1">
+
+        <!-- 비회원 구매 모달창 -->
+        <div class="container">
+            <div class="cart_header">
+                <h1>비회원 주문</h1>
+            </div>
+            <div class="cart_body">
+                <div class="show_shop_box">
+                    <div class="show_shop_box_container">
+                        <div class="show_shop_box_container_header">
+                            <div class="btn_box">
+                                <label for="shop_modal1">건강식품</label>
+                                <label for="shop_modal2">디지털</label>
+                                <label for="shop_modal3">팬시</label>
+                                <label for="shop_modal4">향수</label>
+                                <label for="shop_modal5">헤어케어</label>
+                            </div>
+                        </div>
+                        <div class="show_shop_box_container_body" id="show_shop_box_container_body" ondragover="over1(event)" ondrop="drop1(event)">
+                            <input type="radio" name="shop_modal" id="shop_modal1" checked>
+                            <div class="shop_modal_box1">
+                                <div draggable="true" class="item">이뮨 멀티비타민&미네랄</div>
+                                <div draggable="true" class="item">센트룸</div>
+                                <div draggable="true" class="item">닥터브라이언</div>
+                            </div>
+
+                            <input type="radio" name="shop_modal" id="shop_modal2">
+                            <div class="shop_modal_box2"></div>
+
+                            <input type="radio" name="shop_modal" id="shop_modal3">
+                            <div class="shop_modal_box3"></div>
+
+                            <input type="radio" name="shop_modal" id="shop_modal4">
+                            <div class="shop_modal_box4"></div>
+
+                            <input type="radio" name="shop_modal" id="shop_modal5">
+                            <div class="shop_modal_box5"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="by_box">
+                    <div class="cart">
+                        <div id="show_cart" class="show_cart" ondragover="over(event)" ondrop="drop(event)"></div>
+                        <div class="show_price">
+                            <div class="user_box">
+                                <p>비회원 ID <span class="ran"></span></p>
+                            </div>
+                            <div class="shop_totalbox" id="shop_totalbox">
+                                <p class="happ" id="happ">합계 <span class="laet_won">0</span>원</p>
+                                <div>(20,000원 이상 구매시 무료배송)</div>
+                            </div>
+                            <div class="bybt">
+                                <button onclick="last()">주문하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
