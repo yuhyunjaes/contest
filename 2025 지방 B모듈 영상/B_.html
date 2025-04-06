@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="B.css">
+    <script src="B.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <div class="wrap1">
+
+            <div class="last_box">
+                <p class="last_text"></p>
+            </div>
+
+            <input type="radio" name="open_modalbox" id="open_modalbox">
+            <input type="radio" name="open_modalbox" id="close_modalbox">
+            <label class="modal_open_btn" for="open_modalbox">열기</label>
+            <div class="shop_container">
+                <div class="shop_header">
+                    <h1>비회원 주문</h1>
+                    <label for="close_modalbox">X</label>
+                </div>
+                <div class="shop_body">
+                    <div class="show_shop_box">
+                        <div class="show_box">
+                            <div class="show_header">
+                                <div class="label_box">
+                                    <label for="open1">건강식품</label>
+                                    <label for="open2">디지털</label>
+                                    <label for="open3">팬시</label>
+                                    <label for="open4">향수</label>
+                                    <label for="open5">헤어케어</label>
+                                </div>
+                            </div>
+                            <div class="show_body" ondragover="over1(event)" ondrop="drop1(event)">
+                                <input type="radio" name="shop_page" id="open1" checked>
+                                <div class="show_body_container1">
+                                    <div draggable="true" class="item">
+                                        <img src="image/건강식품/1.PNG" alt="">
+                                        <p class="item_shop_name">이뮨 멀티비타민&미네랄</p>
+                                        <p class="item_shop_price">75,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/건강식품/2.PNG" alt="">
+                                        <p class="item_shop_name">센트룸</p>
+                                        <p class="item_shop_price">27,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/건강식품/3.PNG" alt="">
+                                        <p class="item_shop_name">닥터브라이언</p>
+                                        <p class="item_shop_price">2,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/건강식품/4.PNG" alt="">
+                                        <p class="item_shop_name">액티브 멀티포맨</p>
+                                        <p class="item_shop_price">30,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/건강식품/5.PNG" alt="">
+                                        <p class="item_shop_name">네이처메이드B12</p>
+                                        <p class="item_shop_price">30,000</p>
+                                    </div>
+                                </div>
+                                
+                                <input type="radio" name="shop_page" id="open2">
+                                <div class="show_body_container2">
+                                    <div draggable="true" class="item">
+                                        <img src="image/디지털/1.PNG" alt="">
+                                        <p class="item_shop_name">PANTONE PD충전 보조배터리</p>
+                                        <p class="item_shop_price">24,400</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/디지털/2.PNG" alt="">
+                                        <p class="item_shop_name">Bowie D05 무선 블루투스 5.3 헤드셋 </p>
+                                        <p class="item_shop_price">36,900</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/디지털/3.PNG" alt="">
+                                        <p class="item_shop_name">독거미 F99 기계식 키보드</p>
+                                        <p class="item_shop_price">70,750</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/디지털/4.jpg" alt="">
+                                        <p class="item_shop_name">파이널마우스 스타라이트12 페가수스 미디엄</p>
+                                        <p class="item_shop_price">1,254,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/디지털/5.PNG" alt="">
+                                        <p class="item_shop_name">보이저5200 블루투스 이어폰</p>
+                                        <p class="item_shop_price">146,000</p>
+                                    </div>
+                                </div>
+
+                                <input type="radio" name="shop_page" id="open3">
+                                <div class="show_body_container3">
+                                    <div draggable="true" class="item">
+                                        <img src="image/" alt="">
+                                        <p class="item_shop_name">명품 자동 장우산</p>
+                                        <p class="item_shop_price">31,600</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/팬시/2.PNG" alt="">
+                                        <p class="item_shop_name">14K 윙블링 원터치 링 귀걸이(주문제작)</p>
+                                        <p class="item_shop_price">250,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/팬시/3.PNG" alt="">
+                                        <p class="item_shop_name">14K 윙블링 메르시 목걸이(주문제작)</p>
+                                        <p class="item_shop_price">265,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/팬시/4.PNG" alt="">
+                                        <p class="item_shop_name">게이밍 이어폰 VJJB NI</p>
+                                        <p class="item_shop_price">38,900</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/팬시/5.PNG" alt="">
+                                        <p class="item_shop_name">인스탁스 미니 에보</p>
+                                        <p class="item_shop_price">320,000</p>
+                                    </div>
+                                </div>
+                                
+                                <input type="radio" name="shop_page" id="open4">
+                                <div class="show_body_container4">
+                                    <div draggable="true" class="item">
+                                        <img src="image/향수/1.PNG" alt="">
+                                        <p class="item_shop_name">에스쁘아 솔리드 퍼퓸 4.2g</p>
+                                        <p class="item_shop_price">26,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/향수/2.PNG" alt="">
+                                        <p class="item_shop_name">호텔도슨 향수 오드퍼퓸 75ml</p>
+                                        <p class="item_shop_price">153,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/향수/3.PNG" alt="">
+                                        <p class="item_shop_name">랑방 레 플레르 EDT 90ml</p>
+                                        <p class="item_shop_price">64,500</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/향수/4.PNG" alt="">
+                                        <p class="item_shop_name">몽블랑 익스플로러 EDP 60ml</p>
+                                        <p class="item_shop_price">103,000</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/향수/5.PNG" alt="">
+                                        <p class="item_shop_name">캘빈클라인 One EDT 50ml</p>
+                                        <p class="item_shop_price">58,900</p>
+                                    </div>
+                                </div>
+                                
+                                <input type="radio" name="shop_page" id="ope5">
+                                <div class="show_body_container5">
+                                    <div draggable="true" class="item">
+                                        <img src="image/헤어케어/1.PNG" alt="">
+                                        <p class="item_shop_name">어노브 딥 데미지 트리트먼트 EX 더블</p>
+                                        <p class="item_shop_price">29,800</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/헤어케어/2.PNG" alt="">
+                                        <p class="item_shop_name">려 루트젠 여성맞춤 볼륨 탈모증상케어 샴퓨 353ml</p>
+                                        <p class="item_shop_price">21,900</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/헤어케어/3.PNG" alt="">
+                                        <p class="item_shop_name">라보에이치 두피쿨링&노세범 샴푸 333ml</p>
+                                        <p class="item_shop_price">19,800</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/헤어케어/4.PNG" alt="">
+                                        <p class="item_shop_name">모로칸오일 헤어트리트먼트 100ml</p>
+                                        <p class="item_shop_price">52,200</p>
+                                    </div>
+                                    <div draggable="true" class="item">
+                                        <img src="image/헤어케어/5.PNG" alt="">
+                                        <p class="item_shop_name">닥터포헤어 피토프레시 헤어쿨링 스프레이 150ml</p>
+                                        <p class="item_shop_price">16,000</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="shop_by_box">
+                        <div class="by_box">
+                            <div class="cart_box" ondragover="over(event)" ondrop="drop(event)"></div>
+                            <div class="total_box">
+                                <p class="total">합계 <span class="last_price">0</span>원</p>
+                                <p class="post_text">(20,000원 이상 구매시 무료배송)</p>
+                            </div>
+                            <div class="user_box">
+                                <div class="user"></div>
+                            </div>
+                            <div class="bybtn_box">
+                                <button onclick="last()">주문하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap2">
+            <div class="motto_container">
+                <div id="motto1" class="motto" style="--posi:0">     
+                    <h1 class="motto_text">행복신뢰</h1>
+                </div>
+                <div id="motto2" class="motto" style="--posi:-246px">
+                    <h1 class="motto_text">가치나눔</h1>
+                </div>
+                <div id="motto3" class="motto" style="--posi:-492px">
+                    <h1 class="motto_text">환경선도</h1>
+                </div>
+                <div id="motto4" class="motto" style="--posi:-738px">
+                    <h1 class="motto_text">미래혁신 </h1>
+                </div>
+                <div id="motto5" class="motto" style="--posi:-984px">
+                    <h1 class="motto_text">정보보안</h1>
+                </div>
+            </div>
+        </div>
+        <div class="wrap3">
+            <div class="video_container">
+                <div class="video_control">
+                    <div class="control_bin"></div>
+                    <div class="control_box">
+                        <div class="control_box1">
+                            <div class="loop_box">
+                                <p>반복재생</p>
+                                <input type="checkbox" name="loop" id="loop">
+                                <label for="loop" class="loop_text">꺼짐</label>
+                            </div>
+                            <div class="auto_box">
+                                <p>자동재생</p>
+                                <input type="checkbox" name="auto" id="auto">
+                                <label for="auto" class="auto_text">꺼짐</label>
+                            </div>
+                        </div>
+                        <div class="control_box2">
+                            <button onclick="skip(-10)" class="back">-10s</button>
+                            <button onclick="start()" class="start"></button>
+                            <button onclick="stop()" class="stop"></button>
+                            <button onclick="all_stop()" class="all_stop"></button>
+                            <button onclick="skip(10)" class="go">+10s</button>
+                        </div>
+                        <div class="control_box3">
+                            <div class="speed_box">
+                                <p>재생속도 <span class="now_speed">1x</span></p>
+                                <button onclick="speeddown()">-0.1x</button>
+                                <button onclick="speed()">1x</button>
+                                <button onclick="speedup()">+0.1x</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <video id="video" src="image/AD.mp4"></video>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
