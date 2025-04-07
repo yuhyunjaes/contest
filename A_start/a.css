@@ -1,0 +1,399 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+body {
+    overflow-x: hidden;
+}
+#wrap {
+    width: 100vw;
+    position: relative;
+}
+.real_header {
+    background-color: white;
+    z-index: 2;
+    position: sticky; 
+    top: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    border-bottom: 10px solid orangered;
+}
+header {
+    width: 1280px;
+    height: 70px;
+    display: flex;
+}
+.logo,
+.user_box {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.logo > a {
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    left: 0;
+}
+.logo > a > img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu_box {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    transition: 0.5s;
+}
+.menu > li {
+    height: 70px;
+    line-height: 70px;
+    margin: 0 20px 0 20px;
+    float: left;
+    list-style: none;
+    font-size: 18px;
+    font-weight: 900;
+    cursor: pointer;
+}
+.menu a {
+    color: black;
+}
+.sub_menu {
+    width: 100vw;
+    height: 0;
+    background-color: rgb(245, 245, 245);
+    position: absolute;
+    left: 0;
+    top: 70px;
+    transition: 0.5s;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    z-index: 1;
+}
+.sub_menu a {
+    color: black !important;
+}
+.sub_menu a:hover {
+    color: orangered !important;
+}
+.user_menu {
+    position: absolute;
+    right: 0;
+}
+.user_menu a:hover {
+    color: orangered;
+}
+.menu > li:hover a {
+    color: orangered;
+}
+.menu > li:hover .sub_menu {
+    height: 200px;
+}
+
+.user_menu li:not(.user_menu li:nth-child(4)) {
+    float: left;
+    margin: 0 5px 0 5px;
+    line-height: 70px;
+}
+.user_menu a {
+    color: black;
+    font-weight: 900;
+}
+.user_menu li:nth-child(3) label {
+    margin-top: 15px;
+    width: 96px;
+    height: 36px;
+    border: 2px solid orangered;
+    background-color: transparent;
+    color: orangered;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 30px;
+    font-weight: 900;
+    display: block;
+}
+.user_menu li:nth-child(4) label {
+    margin-top: 15px;
+    width: 100px;
+    height: 40px;
+    background-color: orangered;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 30px;
+    font-weight: 900;
+    display: block;
+}
+.user_menu li:nth-child(4) {
+    float: left;
+}
+
+.slider_container {
+    width: 100vw;
+    height: calc(100vh - 80px);
+    position: relative;
+    overflow: hidden;
+}
+input[type="radio"] {
+    display: none;
+}
+
+.slider1,
+.slider2,
+.slider3 {
+    width: 400%;
+    height: 0;
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+}
+.slide1,
+.slide2,
+.slide3 {
+    width: 100vw;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.slide1 {
+    background-image: url(image/vis/08.jpg);
+}
+.slide2 {
+    background-image: url(image/vis/10.jpg);
+}
+.slide3 {
+    background-image: url(image/vis/02.jpg);
+}
+
+@keyframes slider1 {
+    0% {
+        transform: translateX(0);
+    }
+    16% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100vw);
+    }
+    49% {
+        transform: translateX(-100vw);
+    }
+    66% {
+        transform: translateX(-200vw);
+    }
+    82% {
+        transform: translateX(-200vw);
+    }
+    100% {
+        transform: translateX(-300vw);
+    }
+}
+@keyframes slider2 {
+    0% {
+        transform: translateX(0);
+    }
+    16% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100vw);
+    }
+    49% {
+        transform: translateX(-100vw);
+    }
+    66% {
+        transform: translateX(-200vw);
+    }
+    82% {
+        transform: translateX(-200vw);
+    }
+    100% {
+        transform: translateX(-300vw);
+    }
+}
+.back_slider {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, black, rgba(255, 255, 255, 0), black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.back_slider::after {
+    color: white;
+    font-family: fantasy;
+    font-size: 160px;
+    text-shadow: 10px 5px 1px orangered;
+    transform: skew(-10deg);
+    position: absolute;
+    top: 20%;
+}
+.back_slider::before {
+    width: 500px;
+    color: white;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    position: absolute;
+    bottom: 30%;
+}
+.slide1 .back_slider::after {
+    content: 'Better Give & Take';
+}
+.slide1 .back_slider::before {
+    content: '옴니채널 플랫폼 GIFTS로 전 세계 고객에게 선물의 가치를 높입니다.';
+}
+
+.slide2 .back_slider::after {
+    content: 'Life Style Platforms';
+}
+.slide2 .back_slider::before {
+    content: '고객과 가장 가까운 곳에서  고객에게 다양한 즐거움을 선물합니다.';
+}
+
+.slide3 .back_slider::after {
+    content: 'Online PLAYGROUND';
+}
+.slide3 .back_slider::before {
+    content: '업계 최초 당일 배송 서비스인 "오늘드림"으로 고객 니즈 충족과 고객 경험을 혁신합니다.';
+}
+
+
+.left1,
+.left2 {
+    width: 80px;
+    height: 80px;
+    background-color: orangered;
+    position: absolute;
+    left: 5%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+}
+.left1::after,
+.left2::after {
+    content: '◀';
+}
+.right1,
+.right2 {
+    width: 80px;
+    height: 80px;
+    background-color: orangered;
+    position: absolute;
+    right: 5%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+}
+.right1::after,
+.right2::after {
+    content: '▶';
+}
+.right2,
+.left2 {
+    opacity: 0;
+    pointer-events: none;
+}
+#slider1:checked ~ .slider1 .right2,
+#slider1:checked ~ .slider1 .left2,
+#slider2:checked ~ .slider2 .right2,
+#slider2:checked ~ .slider2 .left2,
+#slider3:checked ~ .slider3 .right2,
+#slider3:checked ~ .slider3 .left2 {
+    opacity: 1;
+    pointer-events: all;
+}
+#slider1:checked ~ .slider1 .right1,
+#slider1:checked ~ .slider1 .left1,
+#slider2:checked ~ .slider2 .right1,
+#slider2:checked ~ .slider2 .left1,
+#slider3:checked ~ .slider3 .right1,
+#slider3:checked ~ .slider3 .left1 {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
+#slider1:checked ~ .slider1,
+#slider2:checked ~ .slider2,
+#slider3:checked ~ .slider3 {
+    height: 100%;
+    animation: 18s infinite linear slider1;
+}
+#slider1-1:checked ~ .slider1,
+#slider1-2:checked ~ .slider2,
+#slider1-3:checked ~ .slider3 {
+    height: 100%;
+    animation: 18s infinite linear slider2;
+}
+#slider1:checked   ~ .slider1:hover,
+#slider2:checked   ~ .slider2:hover,
+#slider3:checked   ~ .slider3:hover,
+#slider1-1:checked ~ .slider1:hover,
+#slider1-2:checked ~ .slider2:hover,
+#slider1-3:checked ~ .slider3:hover {
+    animation-play-state: paused;
+}
+
+
+
+.category {
+    margin-top: 100px;
+    width: 1280px;
+    height: 700px;
+}
+.category_header {
+    width: 100%;
+    height: 10%;
+    line-height: 70px;
+}
+.category_body {
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+.category_content1 {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.btn_box {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+}
+.btn_box label {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 900;
+}
+.category_content2 {
+    width: 80%;
+    height: 100%;
+}
