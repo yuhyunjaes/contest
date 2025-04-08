@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="nomember.css">
+    <script src="nomember.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <label class="openn" for="open_modal_open">open</label>
+
+        <div class="last_text">
+            <p class="last_text_p"></p>
+        </div>
+        
+        <input type="radio" name="modal" id="open_modal_open" >
+        <input type="radio" name="modal" id="open_modal_close">
+        <div class="container">
+            <div class="cart_container">
+                <div class="cart_header">
+                    <h1>비회원 주문</h1>
+                    <label style="position: absolute;right: 40px;font-size: 25px;" for="open_modal_close">X</label>
+                </div>
+                <div class="cart_body">
+                    <div class="show_cart">
+                        <div class="show_cart_header">
+                            <div class="control_label_box">
+                                <label for="cart_box1">건강식품</label>
+                                <label for="cart_box2">디지털</label>
+                                <label for="cart_box3">팬시</label>
+                                <label for="cart_box4">향수</label>
+                                <label for="cart_box5">헤어케어</label>
+                            </div>
+                        </div>
+                        <div class="show_cart_body" ondragover="over1(event)" ondrop="drop1(event)">
+                            <input type="radio" name="cart_box" id="cart_box1" checked>
+                            <div class="cart_box1">
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                            </div>
+
+                            <input type="radio" name="cart_box" id="cart_box2">
+                            <div class="cart_box2">
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                            </div>
+
+                            <input type="radio" name="cart_box" id="cart_box3">
+                            <div class="cart_box3">
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                            </div>
+
+                            <input type="radio" name="cart_box" id="cart_box4">
+                            <div class="cart_box4">
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                            </div>
+
+                            <input type="radio" name="cart_box" id="cart_box5">
+                            <div class="cart_box5">
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                                <div class="item" draggable="true"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="by_cart">
+                        <div class="cart_box" ondragover="over(event)" ondrop="drop(event)"></div>
+                        <div class="total_box">
+                            <p>총합 <span class="total_price" style="color: orangered;font-weight: 900;">0</span>원</p>
+                            <div>(20,000이상 구매시 무료배송)</div>
+                        </div>
+                        <div class="user_box">
+                            <p>비회원ID <span style="color: orangered;font-weight: 900;" class="ran_id"></span></p>
+                        </div>
+                        <div class="by_box">
+                            <button onclick="order()">주문하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

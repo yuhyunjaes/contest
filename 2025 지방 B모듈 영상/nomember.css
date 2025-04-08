@@ -1,0 +1,269 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+#wrap {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+.last_text {
+    opacity: 0;
+    pointer-events: none;
+    
+    width: 500px;
+    height: 300px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.last_text_p {
+    font-size: 20px;
+}
+.last_text_p span {
+    color: orangered;
+    font-weight: 900;
+}
+#open_modal_open:checked ~ .container {
+    height: 100%;
+}
+.container {
+    overflow: hidden;
+    height: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cart_container {
+    width: 600px;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+}
+
+.cart_header {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.cart_body {
+    width: 100%;
+    height: 85%;
+    display: flex;
+}
+.show_cart {
+    width: calc(70% - 10px);
+    height: calc(100% - 10px);
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+}
+.show_cart_header {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.control_label_box label {
+    margin: 0 5px 0 5px;
+}
+
+.show_cart_body {
+    width: 100%;
+    height: 85%;
+}
+input[type="radio"] {
+    display: none;
+}
+
+.cart_box1,
+.cart_box2,
+.cart_box3,
+.cart_box4,
+.cart_box5 {
+    width: 100%;
+    height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#cart_box1:checked ~ .cart_box1,
+#cart_box2:checked ~ .cart_box2,
+#cart_box3:checked ~ .cart_box3,
+#cart_box4:checked ~ .cart_box4,
+#cart_box5:checked ~ .cart_box5 {
+    height: 100%;
+}
+
+.item {
+    width: 150px;
+    height: 160px;
+    margin: 18px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+    overflow: hidden;
+    position: relative;
+}
+.i_name {
+    position: absolute;
+    font-size: 12px;
+    left: 5px;
+    height: 16px;
+    width: calc(100% - 5px);
+    overflow: hidden;
+}
+.i_price{
+    position: absolute;
+    bottom: 20%;
+    left: 5px;
+    font-size: 15px;
+    font-weight: 900;
+}
+.i_post {
+    position: absolute;
+    left: 5px;
+    bottom: 8%;
+    font-size: 10px;
+}
+.item img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.card_list {
+    width: 150px;
+    height: 130px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+    overflow: hidden;
+    position: relative;
+    margin: 0 0 20px 10px;
+}
+.card_list img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    pointer-events: none;
+}
+.item_name {
+    position: absolute;
+    font-size: 12px;
+    height: 16px;
+    overflow: hidden;
+}
+.item_price {
+    position: absolute;
+    font-size: 15px;
+    font-weight: 900;
+    bottom: 18%;
+}
+.item_post {
+    position: absolute;
+    bottom: 8%;
+    font-size: 10px;
+    font-weight: 900;
+}
+.up_down_box {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+}
+.up_down_box button,
+.up_down_box span {
+    width: 15px;
+    height: 15px;
+    border: none;
+}
+.up_down_box button:nth-child(3) {
+    background-color: orangered;
+    color: white;
+}
+.now_price {
+    position: absolute;
+    right: 9px;
+    font-size: 12px;
+    font-weight: 900;
+    bottom: 22px;
+}
+
+.by_cart {
+    width: calc(30% - 10px);
+    height: calc(100% - 10px);
+    margin: 5px;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+}
+.cart_box {
+    width: 100%;
+    height: 60%;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.total_box {
+    width: 100%;
+    height: 15%;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.total_box p {
+    position: absolute;
+    top: 10px;
+    font-size: 14px;
+}
+.total_box div {
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+.user_box {
+    width: 100%;
+    height: 10%;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user_box p {
+    font-size: 14px;
+}
+.by_box {
+    width: 100%;
+    height: 15%;
+    border-radius: 10px;
+    box-shadow: 0 1px 10px rgb(227, 227, 227);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.by_box button {
+    width: 120px;
+    height: 40px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
