@@ -1,6 +1,6 @@
-CREATE TABLE notices (
-id INT AUTO_INCREMENT Primary Key,
-category VARCHAR(250),
-descript text,
-da varchar(250)
+CREATE TABLE notice (
+id int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+category text NOT NULL,
+title text NOT NULL,
+create_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
