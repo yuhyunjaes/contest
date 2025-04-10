@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동영상 컨트롤 기능</title>
+    <link rel="stylesheet" href="video.css">
+</head>
+<body>
+    <div id="wrap">
+        <video id="myVideo" muted autoplay> 
+            <source src="image/AD.mp4" type="video/mp4">
+            브라우저가 video 태그를 지원하지 않습니다.
+        </video>
+        <input type="radio" name="open" id="open" style="display: none;">
+        <label for="open" class="openbtn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+        <div class="bbox">
+            <div class="brealbox">
+                <button id="go" onclick="playVideo()" title="재생">▶</button>
+                <button id="stop" onclick="pauseVideo()" title="일시정지">⏸</button>
+                <button id="left" onclick="skipTime(-10)" title="10초 되감기"></button>
+                <button id="right" onclick="skipTime(10)" title="10초 빨리감기"></button>
+    
+                <button onclick="stopVideo()" title="정지">⏹</button>
+                
+                <button onclick="changeSpeed(-0.1)" title="감속">-0.1</button>
+                <button onclick="changeSpeed(0.1)" title="배속">+0.1</button>
+                <button onclick="resetSpeed()" title="배속 초기화">1</button>
+
+                <button onclick="toggleLoop()" title="반복재생">R</button>
+                <button onclick="toggleAutoplay()" title="자동재생">A</button>
+                <div class="speedbox">재생속도</div>
+                <div class="playbox">재생설정</div>
+                <div class="speedlookbox">현재 재생속도</div>
+                <div class="lookbox" id="lookbox">1</div>
+                <input type="radio" name="open" id="close" style="display: none;">
+                <label for="close" class="closebtn">→</label>
+            </div>
+        </div>
+        <div class="timebox">
+            <div id="leftbox" class="left">
+                <p>◀ 10초</p>
+            </div>
+            <div id="rightbox" class="right">
+                <p>10초 ▶</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="video.js"></script>
+</body>
+</html>

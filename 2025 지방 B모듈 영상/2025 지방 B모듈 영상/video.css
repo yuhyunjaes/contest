@@ -1,0 +1,299 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+button {
+    cursor: pointer;
+}
+#wrap {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.openbtn {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+.openbtn div {
+    width: 40px;
+    height: 3px;
+    background-color: white;
+    border-radius: 20px;
+}
+#open:checked ~ .bbox {
+    width: 12%;
+    opacity: 1;
+}
+.bbox {
+    opacity: 0;
+    transition: 0.5s;
+    position: absolute;
+    right: 0;
+    z-index: 11;
+    overflow: hidden;
+    width: 0%;
+    height: 100vh;
+    backdrop-filter: blur(20px);
+}
+.brealbox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.brealbox > button {
+    position: absolute;
+    border: none;
+    text-align: center;
+}
+.brealbox > button:nth-child(1) {
+    bottom: 10%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(245, 222, 179, 0);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    line-height: 50px;
+    display: block;
+}
+.brealbox > button:nth-child(2) {
+    bottom: 10%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(245, 222, 179, 0);
+    border: 1px solid rgb(255, 255, 255);
+    color: white;
+    line-height: 50px;
+    display: none;
+}
+.brealbox > button:nth-child(3) {
+    background-color: rgba(0, 0, 0, 0);
+    left: 10%;
+    bottom: 10%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.brealbox > button:nth-child(3)::after {
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    content: '';
+    rotate: -45deg;
+}
+.brealbox > button:nth-child(3)::before {
+    width: 10px;
+    height: 10px;
+    border-left: 2px solid white;
+    border-top: 2px solid white;
+    content: '';
+    rotate: -45deg;
+}
+
+.brealbox > button:nth-child(4) {
+    background-color: rgba(0, 0, 0, 0);
+    right: 10%;
+    bottom: 10%;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    line-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.brealbox > button:nth-child(4)::after {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    content: '';
+    rotate: -45deg;
+}
+.brealbox > button:nth-child(4)::before {
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    content: '';
+    rotate: -45deg;
+}
+.timebox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+}
+.left {
+    color: white;
+    font-weight: 900;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.432);
+    margin-left: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.right {
+    transition: 0.5s;
+    pointer-events: none;
+    opacity: 0;
+    color: white;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 250px;
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.432);
+}
+
+.brealbox > button:nth-child(5) {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0);
+    bottom: 4%;
+    line-height: 30px;
+    border: 1px solid white;
+    color: white;
+}
+.speedbox {
+    color: white;
+    position: absolute;
+    left: 10%;
+    bottom: 40%;
+}
+.brealbox > button:nth-child(6) {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    line-height: 40px;
+    bottom: 33%;
+    left: 10%;
+}
+.brealbox > button:nth-child(7) {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    line-height: 40px;
+    bottom: 33%;
+    right: 10%;
+}
+.brealbox > button:nth-child(8) {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid white;
+    color: white;
+    border-radius: 50%;
+    line-height: 40px;
+    bottom: 33%;
+}
+.playbox {
+    color: white;
+    position: absolute;
+    left: 10%;
+    bottom: 17%;
+}
+
+.speedlookbox {
+    color: white;
+    position: absolute;
+    left: 10%;
+    bottom: 28%;
+}
+.lookbox {
+    width: 120px;
+    height: 30px;
+    color: white;
+    position: absolute;
+    text-align: center;
+    line-height: 30px;
+    bottom: 22%;
+}
+.closebtn {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    text-align: center;
+    line-height: 40px;
+}
+.brealbox > button:nth-child(9) {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);    
+    border: 1px solid white;
+    color: white;
+    bottom: 4%;
+    text-align: center;
+    line-height: 30px;
+    left: 10%;
+}
+.brealbox > button:nth-child(10) {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);    
+    border: 1px solid white;
+    color: white;
+    bottom: 4%;
+    text-align: center;
+    line-height: 30px;
+    right: 10%;
+}
